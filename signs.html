@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://businesslocalrecords.com/prototype2/signs.html">
+<title>Sign Permit Records</title>
+<meta name="description" content="Sign, awning, storefront, and facade permits for businesses spending on their street front.">
+<meta name="theme-color" content="#0b2545">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bp:#0b2545; --ink:#14181f; --muted:#5c6570; --paper:#f4f6f8; --card:#fff; --line:#d9dee6;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;padding-top:64px;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:var(--bp);text-decoration:none}
+a:hover{text-decoration:underline}
+button,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--bp);outline-offset:2px}
+.top{background:var(--bp);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.top-inner,.wrap{width:min(1120px,calc(100% - 2rem));margin:0 auto}
+.top-inner{display:flex;align-items:center;gap:.4rem;height:64px}
+.top .top-inner{position:fixed;top:0;left:0;right:0;z-index:40;box-sizing:border-box;width:auto;margin:0;padding:0 max(1rem,calc((100vw - 1120px) / 2));background:var(--bp);border-bottom:1px solid rgba(255,255,255,.08)}
+.brand{font-weight:600;font-size:18px;letter-spacing:.12em;color:#fff;text-decoration:none;white-space:nowrap}
+.top .brand{font-family:inherit;font-size:17px;font-weight:500;letter-spacing:.015em;line-height:1;color:rgba(255,255,255,.72)}
+.top .brand:hover{text-decoration:none;color:rgba(255,255,255,.92)}
+.sections{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.15rem;width:min(1120px,calc(100% - 2rem));margin:0 auto;padding:0 0 1.1rem}
+.sections a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:auto;min-height:58px;text-align:center;color:rgba(255,255,255,.92);font-size:16px;font-weight:500;letter-spacing:.01em;line-height:1.3;text-decoration:none;padding:1.05rem 1.75rem;border:1px solid rgba(255,255,255,.88);border-radius:4px}
+@media(max-width:760px){
+  .top .top-inner{height:auto;min-height:64px;padding:.75rem max(1rem,calc((100vw - 1120px) / 2)) .2rem}
+  .sections{grid-template-columns:1fr;justify-items:center;gap:.65rem;padding:1.2rem 0 .9rem}
+  .sections a{width:min(280px,100%);min-height:40px;padding:.5rem 1rem;font-size:15px}
+}
+.sections a:hover{color:#fff;border-color:#fff;text-decoration:none}
+.sections a.on{color:#fff;border-color:#fff;background:rgba(255,255,255,.08)}
+.head-actions{margin-left:auto;display:flex;align-items:center;gap:.35rem}
+#headsub{display:inline-flex;align-items:center;height:36px;padding:0 .7rem;border:0;background:transparent;color:rgba(255,255,255,.78);font-weight:500;font-size:14px;line-height:1;cursor:pointer;text-decoration:none}
+#headsub:hover{color:#fff;text-decoration:none}
+#headsub[hidden]{display:none}
+#signin{display:inline-flex;align-items:center;justify-content:center;height:36px;max-width:220px;padding:0 1rem;border:0;border-radius:8px;background:#fff;color:var(--bp);font-weight:600;font-size:14px;line-height:1;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#signin:hover{background:#f4f7fb}
+.cities{display:flex;flex-wrap:wrap;justify-content:center;gap:.2rem 1.15rem;padding:0 1rem .65rem}
+.cities a{color:rgba(255,255,255,.72);font-size:13.5px;font-weight:500;text-decoration:none;padding:.05rem 0;border-bottom:2px solid transparent}
+.cities a:hover{color:#fff;text-decoration:none}
+.cities a.on{color:#fff;border-bottom-color:#fff}
+@media(max-width:760px){.cities{display:none}}
+#nav-account{display:inline-flex;align-items:center;height:36px;color:rgba(255,255,255,.92);font-size:14px;font-weight:500;line-height:1;text-decoration:none;padding:0 .7rem}
+#nav-account[hidden]{display:none}
+.start{margin:1.15rem 0 0;font-size:15px;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+.controls{display:grid;gap:.75rem;grid-template-columns:1fr;padding:.45rem 0 .25rem;align-items:end}
+@media(min-width:1100px){.controls{grid-template-columns:1.05fr 1.2fr .95fr .9fr .8fr 1.15fr auto}}
+label.f{display:flex;flex-direction:column;gap:.35rem;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+label.f select,label.f input{text-transform:none;letter-spacing:0;font-weight:500;font-size:16px;background:#fff;border:1px solid #b7c0cc;border-radius:8px;min-height:48px;padding:0 .75rem;width:100%;box-shadow:0 1px 0 rgba(11,37,69,.04)}
+label.f select{padding-right:2rem;appearance:none;background:#fff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%230b2545' d='M1 1l5 5 5-5'/></svg>") no-repeat right .9rem center}
+.clear{min-height:48px;padding:0 .95rem;border:1px solid #b7c0cc;border-radius:8px;background:#fff;font-weight:600;cursor:pointer}
+.clear:hover{border-color:var(--bp);color:var(--bp)}
+.board{margin-top:1rem;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.status{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;justify-content:space-between;padding:.7rem .9rem;color:var(--muted);font-size:13px;border-bottom:1px solid var(--line)}
+.status b{color:var(--ink);font-weight:600}
+.status-actions{display:flex;align-items:center;gap:.75rem}
+.filter-wrap{position:relative}
+.filter-btn{display:inline-flex;align-items:center;gap:.4rem;min-height:36px;padding:0 .7rem;border:1px solid #b7c0cc;border-radius:8px;background:#fff;color:var(--ink);font-weight:600;font-size:13px;cursor:pointer}
+.filter-btn svg{width:14px;height:14px;display:block}
+.filter-btn:hover,.filter-btn.on{border-color:var(--bp);color:var(--bp);background:#f4f7fb}
+.filter-menu{position:absolute;right:0;top:calc(100% + .35rem);z-index:30;width:250px;padding:.8rem;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 32px rgba(11,37,69,.16)}
+.filter-menu[hidden]{display:none}
+.filter-menu label.f{margin-bottom:.65rem}
+.filter-menu label.f:last-child{margin-bottom:0}
+.filter-menu label.f select{min-height:40px;font-size:14px}
+.dl-go{width:100%;min-height:40px;margin-top:.15rem;border:0;border-radius:8px;background:var(--bp);color:#fff;font-weight:600;font-size:14px;cursor:pointer}
+.dl-go:hover{background:#163a66}
+a.dl-go{display:flex;align-items:center;justify-content:center;text-decoration:none}
+a.dl-go:hover{color:#fff;text-decoration:none}
+.offer-lead{margin:0 0 .75rem;color:var(--ink);font-size:13px;line-height:1.45}
+.offer-up{display:block;margin-top:.55rem;text-align:center;color:var(--bp);font-weight:600;font-size:14px;text-decoration:none}
+.offer-up:hover{text-decoration:underline}
+.alert-menu{width:280px}
+.alert-menu .fine{margin:.55rem 0 0;color:var(--muted);font-size:12px;line-height:1.4}
+.alert-off{width:100%;min-height:36px;margin-top:.45rem;border:0;background:none;color:var(--muted);font-weight:600;font-size:13px;cursor:pointer}
+.alert-off:hover{color:var(--bp)}
+#openfull{background:none;border:0;padding:0;color:var(--bp);font-weight:600;font-size:13px;cursor:pointer}
+#openfull:hover{text-decoration:underline}
+#openfull[hidden]{display:none}
+.scroller{overflow:auto}
+table{width:100%;border-collapse:collapse;min-width:920px}
+th,td{text-align:left;border-top:1px solid var(--line);vertical-align:top}
+td{padding:.7rem .85rem}
+th{padding:0;background:#f7f8fa}
+th button{display:flex;align-items:center;gap:.35rem;width:100%;padding:.7rem .85rem;border:0;background:transparent;cursor:pointer;color:#3d4654;font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;text-align:left}
+th button:hover{color:var(--bp)}
+tr.cols th[aria-sort="ascending"],tr.cols th[aria-sort="descending"]{background:#0b2545}
+th[aria-sort="ascending"] button,th[aria-sort="descending"] button,th[aria-sort="ascending"] button:hover,th[aria-sort="descending"] button:hover{color:#fff}
+.arr{font-size:12px;min-width:.7em;color:inherit}
+td.sorted{background:#e4edf6}
+td.mono{font-family:var(--mono);font-size:12px;white-space:nowrap}
+td.addr{font-weight:600}
+td.scope{font-size:13px;color:#2a313b;white-space:normal}
+td.trade{font-size:13px;white-space:normal}
+.group td{padding:0;background:#eef2f6;border-top:1px solid #d3dae3}
+.group button.fold{display:flex;align-items:center;gap:.55rem;width:100%;padding:.65rem .85rem;border:0;background:transparent;cursor:pointer;font-weight:600;font-size:13px;text-align:left;color:var(--ink)}
+.group button.fold:hover{background:#e7edf3}
+.group .chev{width:.85em;color:var(--muted);font-size:11px}
+.group .n{margin-left:auto;font-variant-numeric:tabular-nums}
+tr.cols th{padding:0;background:#fff}
+tr.cols th.plain{padding:.7rem .85rem;color:#3d4654;font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+tr.peek{cursor:pointer}
+tr.data td{box-sizing:border-box;vertical-align:top}
+tr.peek td{filter:blur(5px);user-select:none}
+.pager td{padding:.65rem .85rem;background:#f7f8fa}
+.pager nav{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center}
+.pager button{min-width:36px;min-height:36px;padding:0 .55rem;border:1px solid #b7c0cc;border-radius:8px;background:#fff;color:var(--bp);font-weight:600;cursor:pointer}
+.pager button[aria-current="page"]{background:var(--bp);color:#fff;border-color:var(--bp);cursor:default}
+.pager .gap{color:var(--muted);padding:0 .15rem}
+.pager .hint{border:0;background:none;color:var(--bp);font-weight:600;min-width:0;margin-left:.35rem;cursor:pointer}
+.pager .hint:hover{text-decoration:underline}
+tr.gate td{padding:.35rem .85rem .55rem;background:#fff}
+tr.gate button{border:0;background:none;padding:0;color:var(--bp);font-size:13px;font-weight:600;cursor:pointer}
+tr.gate button:hover{color:var(--bp);text-decoration:underline}
+.empty{padding:1.4rem .9rem;color:var(--muted)}
+.pay{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;padding:1.1rem .95rem;border-top:1px solid var(--line);background:#f7f8fa}
+.pay p{margin:0}
+.pay .k{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.pay .amt{font-weight:600;font-size:16px;letter-spacing:-.02em;margin-top:.15rem}
+.pay .sub{color:var(--muted);font-size:13px;margin-top:.15rem}
+.pay button{min-height:44px;padding:0 1.1rem;border:0;border-radius:8px;background:var(--bp);color:#fff;font-weight:600;cursor:pointer}
+.pay button:hover{background:#163a66}
+.site-footer{margin-top:2rem;border-top:1px solid var(--line);background:#fff}
+.ft{display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;align-items:center;justify-content:space-between;padding:1rem 0 .35rem}
+.ft .brand{color:var(--ink);font-size:13px;font-weight:600;letter-spacing:.04em}
+.ft nav{display:flex;flex-wrap:wrap;gap:.15rem .5rem}
+.ft a{color:#243044;font-size:12px;font-weight:500}
+.ft nav a{font-size:11px;text-decoration:underline;text-underline-offset:2px}
+.copyline{width:min(1120px,calc(100% - 2rem));margin:0 auto;padding:0 0 1.15rem}
+.copyline p{margin:0;color:var(--muted);font-size:11px}
+.modal{position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(10,20,34,.5)}
+.modal[hidden]{display:none}
+.sheet{position:relative;width:min(420px,100%);background:#fff;color:var(--ink);border-radius:12px;padding:1.45rem 1.35rem 1.25rem;box-shadow:0 24px 60px rgba(11,37,69,.28)}
+.sheet h2{margin:0 0 .35rem;font-size:1.2rem;font-weight:600;letter-spacing:-.03em}
+.sheet .lead{margin:0 0 1rem;color:var(--muted);font-size:14px}
+.sheet .err{margin:-.2rem 0 .7rem;color:#8d2a2a;font-size:13px}
+.sheet .x{position:absolute;top:.7rem;right:.7rem;width:32px;height:32px;border:0;border-radius:6px;background:transparent;color:var(--muted);font-size:20px;cursor:pointer}
+.sheet .x:hover{background:#f2f4f7}
+.gbtn,.go{width:100%;min-height:46px;border-radius:8px;font-weight:600;cursor:pointer}
+.gbtn{border:1px solid #cfd6e0;background:#fff}
+.gbtn:hover{background:#f7f8fa}
+.or{display:flex;align-items:center;gap:.75rem;margin:.9rem 0;color:var(--muted);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.or:before,.or:after{content:"";height:1px;background:var(--line);flex:1}
+.sheet input{width:100%;min-height:46px;border:1px solid #b7c0cc;border-radius:8px;padding:0 .75rem;margin-bottom:.6rem}
+.go{border:0;background:var(--bp);color:#fff}
+.go:hover{background:#163a66}
+.sort-tip{position:fixed;z-index:50;width:max-content;max-width:220px;padding:.5rem .65rem;background:#e6e8ec;color:#3d4654;border-radius:6px;font-size:13px;font-weight:500;line-height:1.4;box-shadow:0 4px 14px rgba(20,28,40,.12)}
+.sort-tip[hidden]{display:none}
+.sort-tip a{color:#243044;font-weight:600;text-decoration:underline}
+#step-pay[hidden],#step-account[hidden]{display:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<script src="/uet.js" async></script>
+<script src="/gtag.js" async></script>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="/">Local City Records</a>
+    <div class="head-actions">
+      <a id="nav-account" href="/prototype2/portal.html" hidden>Account</a>
+      <a id="headsub" href="/prototype2/checkout.html">Subscribe</a>
+      <button type="button" id="signin">Sign in</button>
+    </div>
+  </div>
+  <nav class="sections" id="sections" aria-label="Sections">
+    <a href="./" data-path="./" data-section="permits">Ranked Permit Records</a>
+    <a href="occupancy.html" data-path="occupancy.html" data-section="occupancy">Occupancy Records</a>
+    <a href="signs.html" data-path="signs.html" data-section="signs">Sign Permit Records</a>
+  </nav>
+  <nav class="cities" id="cities" aria-label="Cities"></nav>
+</header>
+<main class="wrap">
+  <p class="start">Choose a permit type to open this city's sign and storefront permits. Filter the list free, or sign in below to view and download every row.</p>
+  <div class="controls">
+    <label class="f">City
+      <select id="city"></select>
+    </label>
+    <label class="f">Permit type
+      <select id="ptype"></select>
+    </label>
+    <label class="f">Trade
+      <select id="trade"></select>
+    </label>
+    <label class="f">Week
+      <select id="week"></select>
+    </label>
+    <label class="f">Size
+      <select id="size">
+        <option value="">Any size</option>
+        <option value="5">$500k+</option>
+        <option value="4">$100k–$500k</option>
+        <option value="3">$50k–$100k</option>
+        <option value="2">$10k–$50k</option>
+        <option value="1">Under $10k</option>
+        <option value="0">Not published</option>
+      </select>
+    </label>
+    <label class="f">Search
+      <input id="q" type="search" placeholder="Address, type, or scope" autocomplete="off">
+    </label>
+    <button type="button" id="clear" class="clear">Clear</button>
+  </div>
+  <section class="board" id="tape" aria-label="Permit index">
+    <div class="status">
+      <span id="count"></span>
+      <div class="status-actions">
+        <div class="filter-wrap">
+          <button type="button" id="filter-btn" class="filter-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="filter-menu">
+            <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M1.5 2.5h13l-5 6.1V13l-3 1.2V8.6l-5-6.1z"/></svg>
+            <span>Filter</span>
+          </button>
+          <div id="filter-menu" class="filter-menu" hidden>
+            <label class="f">Filter by
+              <select id="filter-field">
+                <option value="trade">Trade</option>
+                <option value="ptype">Permit type</option>
+                <option value="size">Size</option>
+                <option value="week">Week</option>
+              </select>
+            </label>
+            <label class="f">Show
+              <select id="filter-value"></select>
+            </label>
+          </div>
+        </div>
+        <div class="filter-wrap">
+          <button type="button" id="download-btn" class="filter-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="download-menu">
+            <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M8 2.5v7"/><path d="M5.2 7.2 8 10l2.8-2.8"/><path d="M3 12.5h10"/></svg>
+            <span>Download</span>
+          </button>
+          <div id="download-menu" class="filter-menu" hidden>
+            <div id="download-pick">
+              <label class="f">Format
+                <select id="download-format">
+                  <option value="csv">CSV</option>
+                  <option value="excel">Excel</option>
+                </select>
+              </label>
+              <button type="button" class="dl-go" id="download-go">Download list</button>
+            </div>
+            <div id="download-offer" hidden>
+              <p class="offer-lead">Download the full list for every city, and read every issued record on the site.</p>
+              <button type="button" class="dl-go" id="download-signin">Sign in</button>
+              <a class="offer-up" id="download-sub" href="/prototype2/signup.html">Sign Up</a>
+            </div>
+          </div>
+        </div>
+        <div class="filter-wrap">
+          <button type="button" id="alert-btn" class="filter-btn" aria-haspopup="dialog" aria-expanded="false" aria-controls="alert-menu">
+            <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M8 2.2a3.2 3.2 0 0 1 3.2 3.2c0 2.4.7 3.4 1.3 4.1H3.5c.6-.7 1.3-1.7 1.3-4.1A3.2 3.2 0 0 1 8 2.2z"/><path d="M6.6 12.2a1.4 1.4 0 0 0 2.8 0"/></svg>
+            <span>Alerts</span>
+          </button>
+          <div id="alert-menu" class="filter-menu alert-menu" hidden>
+            <div id="alert-offer">
+              <p class="offer-lead">Email a short sample when new records match a city, permit type, trade, or size.</p>
+              <button type="button" class="dl-go" id="alert-signin">Sign in</button>
+              <a class="offer-up" id="alert-sub" href="/prototype2/signup.html">Sign Up</a>
+            </div>
+            <form id="alert-form" hidden>
+              <label class="f">City
+                <select id="alert-city"></select>
+              </label>
+              <label class="f">Permit type
+                <select id="alert-type"></select>
+              </label>
+              <label class="f">Trade
+                <select id="alert-trade"></select>
+              </label>
+              <label class="f">Size
+                <select id="alert-size">
+                  <option value="">Any size</option>
+                  <option value="5">$500k+</option>
+                  <option value="4">$100k–$500k</option>
+                  <option value="3">$50k–$100k</option>
+                  <option value="2">$10k–$50k</option>
+                  <option value="1">Under $10k</option>
+                  <option value="0">Not published</option>
+                </select>
+              </label>
+              <label class="f">Email
+                <select id="alert-frequency">
+                  <option value="twice">Twice a day</option>
+                  <option value="daily">Once a day</option>
+                  <option value="weekly">Once a week</option>
+                  <option value="monthly">Once a month</option>
+                </select>
+              </label>
+              <button type="submit" class="dl-go">Save alert</button>
+              <button type="button" class="alert-off" id="alert-off" hidden>Turn off</button>
+              <p class="fine" id="alert-note"></p>
+            </form>
+          </div>
+        </div>
+        <button type="button" id="openfull" hidden>Open the full index</button>
+      </div>
+    </div>
+    <div class="scroller">
+      <table>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <p class="empty" id="empty" hidden>Select a city.</p>
+  </section>
+</main>
+<div class="modal" id="gate" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+    <button type="button" class="x" id="gate-close" aria-label="Close">×</button>
+    <h2 id="gate-title">Sign in</h2>
+    <p class="lead">Existing customers</p>
+    <form id="login-form">
+      <input id="login-email" type="email" required placeholder="Email" autocomplete="username">
+      <input id="login-password" type="password" required minlength="8" placeholder="Password" autocomplete="current-password">
+      <p class="err" id="login-err" hidden></p>
+      <button class="go" type="submit">Sign in</button>
+    </form>
+    <div class="or">new customer</div>
+    <p class="lead">Subscribe to read the full records.</p>
+    <button type="button" class="gbtn" id="to-checkout">Continue to checkout</button>
+  </div>
+</div>
+<footer class="site-footer">
+  <div class="wrap ft">
+    <a class="brand" href="./" style="color:var(--ink)">Business Local Records</a>
+    <nav aria-label="Footer">
+      <a href="/prototype2/about.html">About</a>
+      <a href="/prototype2/coverage.html">Coverage</a>
+      <a href="/prototype2/terms.html">Terms</a>
+      <a href="/prototype2/privacy.html">Privacy</a>
+    </nav>
+  </div>
+  <div class="copyline"><p>&copy; 2026 Business Local Records</p></div>
+</footer>
+<script>
+const DATA = {"trades":["Electrical","Roofing","Plumbing","Garage","Solar","Tuckpointing","Porch","Kitchen","Bath","Fence"],"bands":["Not published","Under $10k","$10k–$50k","$50k–$100k","$100k–$500k","$500k+"],"cities":[{"id":"austin","label":"Austin","href":"../austin/2026-09-29/","n":1974,"range":"Sep 29 – Oct 13, 2026","pulled":"Oct 13, 2026","weeks":[{"id":"2026-09-29","range":"Sep 29 – Oct 13, 2026","pulled":"Oct 13, 2026"}]},{"id":"baton-rouge","label":"Baton Rouge","href":"../baton-rouge/2026-09-29/","n":219,"range":"Sep 29 – Oct 7, 2026","pulled":"Oct 13, 2026","weeks":[{"id":"2026-09-29","range":"Sep 29 – Oct 7, 2026","pulled":"Oct 13, 2026"}]},{"id":"chicago","label":"Chicago","href":"../chicago/2026-09-29/","n":1262,"range":"Sep 29 – Oct 12, 2026","pulled":"Oct 13, 2026","weeks":[{"id":"2026-09-29","range":"Sep 29 – Oct 12, 2026","pulled":"Oct 13, 2026"}]},{"id":"los-angeles","label":"Los Angeles","href":"../los-angeles/2026-09-29/","n":2522,"range":"Sep 29 – Oct 10, 2026","pulled":"Oct 13, 2026","weeks":[{"id":"2026-09-29","range":"Sep 29 – Oct 10, 2026","pulled":"Oct 13, 2026"}]},{"id":"philadelphia","label":"Philadelphia","href":"../philadelphia/2026-09-29/","n":1047,"range":"Sep 29 – Oct 6, 2026","pulled":"Oct 13, 2026","weeks":[{"id":"2026-09-29","range":"Sep 29 – Oct 6, 2026","pulled":"Oct 13, 2026"}]},{"id":"phoenix","label":"Phoenix","href":"../phoenix/2026-09-29/","n":626,"range":"Sep 29 – Oct 12, 2026","pulled":"Oct 13, 2026","weeks":[{"id":"2026-09-29","range":"Sep 29 – Oct 12, 2026","pulled":"Oct 13, 2026"}]},{"id":"san-diego","label":"San Diego","href":"../san-diego/2026-09-29/","n":207,"range":"Sep 29 – Oct 12, 2026","pulled":"Oct 13, 2026","weeks":[{"id":"2026-09-29","range":"Sep 29 – Oct 12, 2026","pulled":"Oct 13, 2026"}]},{"id":"san-francisco","label":"San Francisco","href":"../san-francisco/2026-09-29/","n":547,"range":"Sep 29 – Oct 9, 2026","pulled":"Oct 13, 2026","weeks":[{"id":"2026-09-29","range":"Sep 29 – Oct 9, 2026","pulled":"Oct 13, 2026"}]},{"id":"seattle","label":"Seattle","href":"../seattle/2026-09-29/","n":212,"range":"Sep 29 – Oct 12, 2026","pulled":"Oct 13, 2026","weeks":[{"id":"2026-09-29","range":"Sep 29 – Oct 12, 2026","pulled":"Oct 13, 2026"}]}],"types":["Bldg-Alter/Repair - Commercial","Additions Alterations Or Repairs","Express Permit Program","Sign - Offsite","Renovation/Alteration","Otc Alterations Permit","Building Permit","Sign - Onsite","Signs","Sign Permit (C)","Building - Addition/Alteration","Building Permit - Addition","Sign - Erect","Grading - Commercial","Building Permit - Addition And Remodel","Electrical Permit - Wall","Electrical Permit - Addition","Electrical Permit - Projecting","Building Permit - Remodel","Plumbing Permit - Addition And Remodel","Sgnp - Sign Permit","Zoning - Zoning Permit","General Permit Minor - General Permit Minor","General - General Permit","Mechanical Permit - Addition And Remodel","F481 - Fp Emergency Access","Electrical Permit - Addition And Remodel","Electrical Permit - Freestanding","Plumbing Permit - Remodel","Electrical Permit - Awning"],"streets":["N PLATT AVE, LOS ANGELES, CA 91307","MASON ST, SAN FRANCISCO, CA 94102","W WACKER DR, CHICAGO, IL 60606","W SLAUSON AVE, LOS ANGELES, CA 90003","N RUSH ST, CHICAGO, IL 60611","POST ST, SAN FRANCISCO, CA 94102","VALENCIA ST, SAN FRANCISCO, CA 94110","N PULASKI RD, CHICAGO, IL 60639","S WABASH AVE, CHICAGO, IL 60605","S ARCHER AVE, CHICAGO, IL 60608","S FINANCIAL PL, CHICAGO, IL 60605","MIRA MESA BL, SAN DIEGO, CA 92121","S LMU DR, LOS ANGELES, CA 90045","N COLE AVE, LOS ANGELES, CA 90038","CAMINO DEL RIO SOUTH, UNIT 300, SAN DIEGO, CA 92108","N CAHUENGA BLVD, LOS ANGELES, CA 90038","N GREEN ST, CHICAGO, IL 60607","39TH AV, SAN FRANCISCO, CA 94122","LINCOLN AV, SAN DIEGO, CA","45TH AV, SAN FRANCISCO, CA 94122","MISSION ST, SAN FRANCISCO, CA 94112","W WRIGHTWOOD AVE, CHICAGO, IL 60614","W OXNARD ST, LOS ANGELES, CA 91606","SAN GABRIEL AV, SAN FRANCISCO, CA 94112","CHESTNUT ST, SAN FRANCISCO, CA 94123","W OHARE AIRPORT","W WASHINGTON BLVD, CHICAGO, IL 60607","E WATERSIDE DR, CHICAGO, IL 60601","GREENWELL SPRINGS RD, BATON ROUGE, LA 70814","W TEMPLE ST, LOS ANGELES, CA 90026","GREENWICH ST, SAN FRANCISCO, CA 94123","W CHICAGO AVE, CHICAGO, IL 60651","N CENTRAL AVE, CHICAGO, IL 60630","N ASHLAND AVE, CHICAGO, IL 60657","W LAKE ST, CHICAGO, IL 60607","W 63RD ST, CHICAGO, IL 60629","KEARNY ST, SAN FRANCISCO, CA 94108","W WILSHIRE BLVD, LOS ANGELES, CA 90010","22ND AV, SAN FRANCISCO, CA 94122","PLANK RD, BATON ROUGE, LA 70805","3RD ST, BATON ROUGE, LA 70802","W LOYOLA AVE, CHICAGO, IL 60626","N RACINE AVE, CHICAGO, IL 60614","W SUPERIOR ST, CHICAGO, IL 60612","N LA CIENEGA BLVD, LOS ANGELES, CA 90048","S WESTERN AVE, LOS ANGELES, CA 90006","N NORTH SPRING ST, LOS ANGELES, CA 90012","N LANKERSHIM BLVD, LOS ANGELES, CA 91601","S WESTERN AVE, LOS ANGELES, CA 90047","E UNION ST, SEATTLE, WA 98122","N CICERO AVE, CHICAGO, IL 60641","W GREGORY ST, CHICAGO, IL 60625","W NORDHOFF ST 1105, LOS ANGELES, CA 91343","DAY ST, SAN FRANCISCO, CA 94110","E 6TH ST, AUSTIN, TX 78701","E 111TH ST, LOS ANGELES, CA 90059","N WILMINGTON BLVD, LOS ANGELES, CA 90744","S BROADWAY, LOS ANGELES, CA 90003","S WILMINGTON AVE, LOS ANGELES, CA 90059","S COMPTON AVE, LOS ANGELES, CA 90011","N AVALON BLVD, LOS ANGELES, CA 90744","S CENTRAL AVE, LOS ANGELES, CA 90011","W HOLLYWOOD BLVD, LOS ANGELES, CA 90027","S AVALON BLVD, LOS ANGELES, CA 90011","N VAN NUYS BLVD, LOS ANGELES, CA 91403","W PICO BLVD, LOS ANGELES, CA 90035","VAN NESS AV, SAN FRANCISCO, CA 94102","E MANCHESTER AVE, LOS ANGELES, CA 90001","S VERMONT AVE, LOS ANGELES, CA 90037","S CRENSHAW BLVD, LOS ANGELES, CA 90043","W VICTORY BLVD #C, LOS ANGELES, CA 91307","S BROADWAY, LOS ANGELES, CA 90037","28TH ST, SAN FRANCISCO, CA 94131","KENTSHIRE CT, BATON ROUGE, LA 70810","W WILSHIRE BLVD #100, LOS ANGELES, CA 90010","N ALAMEDA ST, LOS ANGELES, CA 90012","N WACKER DR, CHICAGO, IL 60606","W ROSCOE ST, CHICAGO, IL 60657","E JACKSON BLVD, CHICAGO, IL 60604","E 95TH ST, CHICAGO, IL 60619","W 83RD ST, CHICAGO, IL 60620","N ELSTON AVE, CHICAGO, IL 60614","N CLYBOURN AVE, CHICAGO, IL 60614","W SUNSET BLVD, LOS ANGELES, CA 90026","S FAIRFAX AVE A11, LOS ANGELES, CA 90036","W JEFFERSON BLVD, LOS ANGELES, CA 90016","SACRAMENTO ST, SAN FRANCISCO, CA 94115","PERKINS RD, BATON ROUGE, LA 70808","JEFFERSON HWY, BATON ROUGE, LA 70806","N CALIFORNIA AVE, CHICAGO, IL 60647","S ASHLAND AVE, CHICAGO, IL 60608","W IRVING PARK RD, CHICAGO, IL 60641","W DIVISION ST, CHICAGO, IL 60610","N AVONDALE AVE, CHICAGO, IL 60631","N RESEDA BLVD, LOS ANGELES, CA 91324","W PICO BLVD 1-3, LOS ANGELES, CA 90064","W OLYMPIC BLVD, LOS ANGELES, CA 90025","W 6TH ST, LOS ANGELES, CA 90020","HIGHLAND RD, BATON ROUGE, LA 70802","N VAN NUYS BLVD, LOS ANGELES, CA 91402","E WASHINGTON BLVD #120, LOS ANGELES, CA 90021","MISSION ST, SAN FRANCISCO, CA 94103","W DIVISION ST, CHICAGO, IL 60622","N MILWAUKEE AVE, CHICAGO, IL 60630","N LINCOLN AVE, CHICAGO, IL 60614","S AUSTIN AVE, CHICAGO, IL 60638","BROADWAY, SAN FRANCISCO, CA 94133","21ST ST, SAN FRANCISCO, CA 94114","SAN GABRIEL ST, AUSTIN, TX 78705","W GRAND AVE, CHICAGO, IL 60707","S HALSTED ST, CHICAGO, IL 60607","W MONTROSE AVE, CHICAGO, IL 60613","S RACINE AVE, CHICAGO, IL 60607","N ABERDEEN ST, CHICAGO, IL 60642","W SANTA MONICA BLVD, LOS ANGELES, CA 90067","W COSTANSO ST, LOS ANGELES, CA 91364","W VICTORY BLVD, LOS ANGELES, CA 91335","W 3RD ST, LOS ANGELES, CA 90048","S ALLA ROAD, LOS ANGELES, CA 90066","S MAIN ST, LOS ANGELES, CA 90037","21ST ST, SAN FRANCISCO, CA 94110","15TH ST, SAN FRANCISCO, CA 94103","N LAMAR BLVD BLDG B, AUSTIN, TX 78753","N CAPITAL OF TEXAS HWY NB, AUSTIN, TX 78746","W BEN WHITE BLVD SVRD WB BLDG A, AUSTIN, TX 78704","CONGRESS AVE, AUSTIN, TX 78701","E MARTIN LUTHER KING JR BLVD UNIT 105, AUSTIN, TX 78702","ANDERSON MILL RD, AUSTIN, TX 78750","THE LAKES BLVD UNIT 101, AUSTIN, TX 78660","S IH 35 SVRD NB, AUSTIN, TX 78741","N STATE ST, CHICAGO, IL 60654","TRIANGLE AVE BLDG 4 UNIT 405, AUSTIN, TX 78751","E CESAR CHAVEZ ST, AUSTIN, TX 78702","W THOMAS RD, PHOENIX, AZ 85019","PINE ST, PHILADELPHIA, PA 19143","RIDGE AVE, PHILADELPHIA, PA 19129","S CAMAC ST, PHILADELPHIA, PA 19148","KREWSTOWN RD, PHILADELPHIA, PA 19115","WAKE FOREST LN, AUSTIN, TX 78723","SPRINGFIELD DR, AUSTIN, TX 78744","CHESTNUT ST, PHILADELPHIA, PA 19104","MONUMENT RD, PHILADELPHIA, PA 19131","COTTMAN AVE, PHILADELPHIA, PA 19149","FRANKFORD AVE, PHILADELPHIA, PA 19124","CHESTNUT ST, PHILADELPHIA, PA 19106","BLAKEMORE ST, PHILADELPHIA, PA 19138","N 56TH ST","N CENTRAL AVE, PHOENIX, AZ 85004","WALNUT ST, PHILADELPHIA, PA 19102","W 36TH ST, AUSTIN, TX 78731","E CACTUS RD, PHOENIX, AZ 85032","S US 183 HWY SB, AUSTIN, TX 78744","RIVER PLACE BLVD, AUSTIN, TX 78726","W QUINCY ST, CHICAGO, IL 60661","LOCUST ST, PHILADELPHIA, PA 19102","LINDBERGH BLVD, PHILADELPHIA, PA 19153","WELSH RD, PHILADELPHIA, PA 19152","RIDGE AVE, PHILADELPHIA, PA 19128","DICKINSON ST, PHILADELPHIA, PA 19147","W HUNTING PARK AVE, PHILADELPHIA, PA 19140","E BEN WHITE BLVD SVRD WB, AUSTIN, TX 78704","N LAMAR BLVD, AUSTIN, TX 78756","W SURF ST, CHICAGO, IL 60657","GREENE ST, PHILADELPHIA, PA 19144"],"rows":[["2026-10-09",3,0,0,5,2,0,850000,"6410 N PLATT AVE, Los Angeles, CA 91307","ePLAN. CORE & SHELL TENANT IMPROVEMENT TO (E) RETAIL, SPLIT INTO 2 SUITES. REMODEL FACADE & RE-ROOF"],["2026-10-09",7,1,1,5,2,0,13000000,"125 Mason St, San Francisco, CA 94102","convert basement parking to loading zones only; electrification of bldg heating & water heating systems; upgrading lights to led; convert 3-units to mobility; 2-units to hvi; playground replacement 1/f; selective glazing; accessibility upgrade to comm romm @ 9/f lounge; roofing replacment; bldg sign"],["2026-10-08",2,2,2,5,32,0,686850,"211 W WACKER DR, Chicago, IL 60606","TUCKPOINTING AND UNIT MASONRY REPAIR / REPLACEMENT: 800 SQ. FT., LINTEL QTY. 0, MAX. LENGTH 0. CONCRETE MASONRY REPAIR / REPLACEMNT: 650SQ. FT., EXCAVATION = NO. LOCATION: NORTH, SOUTH, EAST, AND WEST EXTERIOR FACADE.."],["2026-10-01",3,3,3,5,0,0,850000,"420 W SLAUSON AVE, Los Angeles, CA 90003","Build new double sided digital billboard with an overall height of 80' with local artwork on the backside. This billboard is part of the Metro TCN Ordinance. SPI UNDER 24048-20000-01108"],["2026-09-30",2,4,4,5,133,0,750000,"630 N RUSH ST, Chicago, IL 60611","SELF-CERT 2019 CBRC ALTERATIONS TO EXISTING FIRST FLOOR TENANT SPACE WITHIN EXISTING SEVEN STORY BUILDING. ALTERATIONS INCLUDE: NEW KITCHEN WITH EXHAUST HOOD, RESTROOM FIXTURES, INTERIOR PARTITION WALLS, ELECTRICAL, PLUMBING, MECHANICAL AND FIRE PROTECTION. ALL SIGNAGE UNDER SEPARATE PERMIT. NO CHANGE IN USE. (CONSTRUCTION TYPE I-B - FULLY SPRINKLED - OCCUPANCIES IN BUILDING: A, R)"],["2026-10-08",7,1,5,4,2,0,165000,"555 Post St, San Francisco, CA 94102","priority process - exterior repairs/deferred maintenance in compliance w/facade/inspection ord. remove brick to determine condition of embedded steel. repair/waterproofing of (e) embedded steel elements. replace corroded steel w/in wall. r/r brick as needed. repointing of brick mortar joints."],["2026-10-08",7,5,6,4,0,0,250000,"580 Valencia St, San Francisco, CA 94110","interior tenant remodeling. no change in use, egress or occupancy. no storefront or exterior work. work includes rearranging internal non load bearing walls, millwork removal; new walls and floor finishes. relocation of (e) power + data receptacles and addition of new receptacles. in kind light..."],["2026-10-06",2,4,7,4,0,0,150000,"2301 N PULASKI RD, Chicago, IL 60639","SELF-CERT 2019 CBRC: ALTERATION TO FACADE & ASSOCIATED STRUCTURE OF VACANT GROUND-LEVEL RETAIL SPACE IN SINGLE STORY PORTION OF EXISTING 2 & 1 STORY BUILDING. NO CHANGE IN OCCUPANCY.OCCUPANCY: GROUPS: B, R5TYPE IIIB CONSTRUCTION"],["2026-10-05",2,4,8,4,5,0,100000,"1150 S WABASH AVE, Chicago, IL 60605","SELF CERT: AUNTEA JENNY BUBBLE TEA INTERIOR BUILD-OUT FROM AN EXISTING CUPCAKE STORE WITH ASSOCIATED ARCHITECTURAL, ELECTRICAL AND PLUMBING WORK.NO CHANGE TO STRUCTRUAL, HVAC AND EXTERIOR FACADE."],["2026-10-05",2,4,9,4,0,0,104637,"3307 S ARCHER AVE, Chicago, IL 60608","SPR 2019 CBRC: REMOVE AND REPLACE NORTHWEST FRONT FACADE WALL TO EXISTING 2-STORY MIXED-USE BUILDING AS PER PLANS. (OCCUPANCY GROUP M;R-2 | TYPE 2B CONSTRUCTION)"],["2026-10-05",2,2,10,4,32,0,100000,"732 S FINANCIAL PL, Chicago, IL 60605","TUCKPOINTING AND UNIT MASONRY REPAIR / REPLACEMENT: 2900 SQ. FT., LINTEL QTY. 8, MAX. LENGTH 6. LOCATION: EXTERIOR FACADE."],["2026-10-02",6,6,11,4,5,0,142792,"6765 Mira Mesa Bl, San Diego, CA 92121","MIRA MESA: MIRA MESA: Building, Mechanical, Electrical and Plumbing Permits for Tenant Improvement to construct walk-up service take-out ice cream shop. Work to include framing, drywall, electrical, mechanical and plumbing work, also re-open previously in-filled storefront system and install new transaction service windows in that location. In-fill portion of existing storefront system and install new single door. (Prior Discretionary PTS-167056)"],["2026-10-01",3,7,12,4,0,0,125000,"1 S LMU DR, Los Angeles, CA 90045","[ePlan] RECONSTRUCTION OF CONCRETE SLAB LMU BLUFF SIGN PER SPECIFIC PLAN"],["2026-10-01",3,0,13,4,0,0,450000,"752 N COLE AVE, Los Angeles, CA 90038","Deferred Submittal for Curtain Wall System, Storefronts, and Glass Guardrail. Original bp Application #: 21010-10000-06500/Plan Check #: B21LA23446ASSESSORS PARCEL NUMBER (APN): 5533033902Project Name: Hollywood Sanitation yardW.O.# SZC13946"],["2026-09-30",6,6,14,4,5,0,206856,"2333 Camino Del Rio South, Unit 300, San Diego, CA 92108","MISSION VALLEY. Building, mechanical, electrical & plumbing permits for proposed T.I. on 3rd floor which includes demolition of (E) tenant space & work to consist of (N) partitions, millwork, finishes & expansion of interior into (E) balcony space with (N) storefront for (E) 3-story commercial building. CO-2-2"],["2026-09-29",3,0,15,4,0,0,250000,"1200 N CAHUENGA BLVD, Los Angeles, CA 90038","EplanSUPPLEMENTAL TO PEMIT # 22010-10000-04331 TO REVISE PLANS & ADD. STAIRS & RAMP TO RETAL SPACE & CHANGE THE FACADE & SHIFT REAIL DOOR SPACE"],["2026-10-09",2,2,16,3,0,0,80000,"167 N GREEN ST, Chicago, IL 60607","IN-KIND REPLACEMENT OF EXTERIOR WINDOWS AND DOORS IN EXISTING OPENINGS. REPLACEMENT WINDOWS: 3; REPLACEMENT SKYLIGHTS: 0; REPLACEMENT DOORS: 1. AFFECTS: 0 RESIDENTIAL UNIT(S), 1 NON-RESIDENTIAL UNIT(S), LOCATION: INTERIOR FACING FACADE - RETAIL C."],["2026-10-07",7,5,17,3,264,0,75000,"1647 39th Av, San Francisco, CA 94122","renovate(e) garage spacecreat family room area to include bathroom, vif in field that ceiling & wall assembly meet 1 hour requirement per code. install new windows & door at rear facade for light & air requirements per code. no work proposed at 2nd floor. relocate (e) wh & furnace."],["2026-10-05",6,6,18,3,5,0,67600,"2933 Lincoln Av, San Diego, CA","NORTH PARK. Building, electrical & plumbing permits for interior remodel of (E) restroom for ADA compliance & replacement of storefront windows & door to (E) retail space. CC-3-9, TAOZ"],["2026-10-02",7,1,19,3,392,0,63479,"1520 45th Av, San Francisco, CA 94122","alter site to pa# 201709056882, reconfigure interior layout for (n) bathrooms, closets, laundry, media room and (e) garage @ 1/f. reconfigure layout of (e) living room, kitchen, bath and bedrooms @ 2/f. propose (n) bath w/skylight @ 2/f. revise doors & windows @ rear facade. update applicable buildi"],["2026-09-29",7,5,20,3,0,0,68520,"4610 Mission St, San Francisco, CA 94112","at&t modification of (e) wireless facility consisting of: r/r (3) antennas w/(3) (n) mounting pipes; install 1 (n) netsure 7100 upgrade kit in (e) dcpp rack and (9) (n) vertiv converter - in (e) dcpp rack; install rf safety signage; stripping and barricades per eme rf report"],["2026-10-09",2,2,21,2,32,0,31000,"715 W WRIGHTWOOD AVE, Chicago, IL 60614","TUCKPOINTING AND UNIT MASONRY REPAIR / REPLACEMENT: 800 SQ. FT., LINTEL QTY. 3, MAX. LENGTH 3. LOCATION: FRONT FACADE."],["2026-10-09",3,3,22,2,0,0,10000,"10829 W OXNARD ST, Los Angeles, CA 91606","ePlan. Removal of (e) offsite billboard structure build under permit # 77LA54970"],["2026-10-09",7,5,23,2,0,0,30000,"50 San Gabriel Av, San Francisco, CA 94112","replace in kind 7 window sashes only on the front facade and 3 window sashes only on the rear facade. the 7 windows in the front facade u-factor above 0.27. wood and window details to remain."],["2026-10-09",7,5,24,2,0,0,45000,"2031 Chestnut St, San Francisco, CA 94123","tenant improvement in an existing restaurant space. new storefront door, non-structural wall demo, new equipment under hood. relocate existing restroom door and paint exterior of building."],["2026-10-08",2,8,25,2,0,0,10000,"10000 W OHARE AIRPORT","AIRZETA: INTERNALLY ILLUMINATED FACE LIT WALL SIGN (PATTON DR ELEVATION) - 3'-11\" H X 22'-11\" W ( 90 SQ FT)"],["2026-10-08",2,8,26,2,0,0,10000,"1144 W WASHINGTON BLVD, Chicago, IL 60607","A MA MANIERE: INTERNALLY ILLUMINATED FACE LIT WALL SIGN (W WASHINGTON BLVD) - 1'-10\" H X 10'-1\" W (18 SQ FT)"],["2026-10-08",2,2,27,2,32,0,48450,"450 E WATERSIDE DR, Chicago, IL 60601","TUCKPOINTING AND UNIT MASONRY REPAIR / REPLACEMENT: 100 SQ. FT., LINTEL QTY. 0, MAX. LENGTH 0. LOCATION: ALL EXTERIOR FACADE ELEVATIONS."],["2026-10-07",1,9,28,2,0,0,12000,"8721 GREENWELL SPRINGS RD, Baton Rouge, LA 70814","Commercial Wall Sign"],["2026-10-07",3,0,29,2,0,0,42750,"2606 W TEMPLE ST, Los Angeles, CA 90026","EPLAN -- CHANGE THE USE OF THE EXISTING SERVICE STATION TO RETAIL TO ACCOMMODATE THEEXPANSION OF THE EXISTING RETAIL AREA. -RELOCATION OF ACCESSIBLE PARKING- REMOVE AND REPLACE THE EXISTING BROKEN CONCRETEWALKWAY- REMOVE THE EXISTING ROLL UP DOORS AND REPLACE THEMWITH NEW STOREFRONT SYSTEM- PROVIDE FRESH NEW PAINT PER ELEVATION- REMODEL AND EXPAND THE EXISTING CASHIER AND SALESAREA INTO THE EXISTING VACANT SERVICE AREA(NON-STRUCTURAL)"],["2026-10-07",7,5,30,2,10,0,30000,"2765 Greenwich St, San Francisco, CA 94123","replace windows at front and rear facades. new sliding glass doors at 1st and 2nd floors. new garage door in (e) opening. replace roof shingles with standing seam metal roof."],["2026-10-06",2,4,31,2,0,0,21000,"3510 W CHICAGO AVE, Chicago, IL 60651","REMOVE EXISTING BRICK, FACADE, AND WINDOWS AT SOUTH SIDE FACADE, REPLACING WITH NEW BRICK, FACADE, AND WINDOWS OF DIFFERENT SIZES, WITH NO CHANGE TO THE EXISTING ARCHITECTURE AND NO INTERIOR WORK PROPOSED."],["2026-10-06",2,2,32,2,32,0,16500,"4501 N CENTRAL AVE, Chicago, IL 60630","TUCKPOINTING AND UNIT MASONRY REPAIR / REPLACEMENT: 1500 SQ. FT., LINTEL QTY. 0, MAX. LENGTH 0. LOCATION: FRONT FACADE, SIDE OF THE BUILDING."],["2026-10-05",2,8,33,2,0,0,18000,"3020 N ASHLAND AVE, Chicago, IL 60657","PANERA BREAD DRIVE THRU: INTERNALLY ILLUMINATED SINGLE DOUBLE SIDED GROUND SIGN (SOUTHEAST PROPERTY LINE) - 4'-9 H X 9'-3\" W (44 SQ FT)"],["2026-10-05",2,8,33,2,0,0,12000,"3020 N ASHLAND AVE, Chicago, IL 60657","DRIVE THRU: CLEARANCE BAR SINGLE SIDED GROUND SIGN (NORTH PROPERTY LINE) - 8'-6\" H X 6'-9\" W\" (58 SQ FT)"],["2026-10-05",2,8,34,2,0,0,23000,"858 W LAKE ST, Chicago, IL 60607","ONE DOUBLE-FACED, WALL-MOUNTED PROJECTING CABINET SIGN WITH AN ILLUMINATED UPPER CABINET AND AN INTEGRATED DIGITAL LED MESSAGE CENTER UNDERNEATH, FORMING ONE COMPLETE SIGN."],["2026-10-05",2,2,35,2,32,0,11300,"3825 W 63RD ST, Chicago, IL 60629","TUCKPOINTING AND UNIT MASONRY REPAIR / REPLACEMENT: 200 SQ. FT., LINTEL QTY. 0, MAX. LENGTH 0. CONCRETE MASONRY REPAIR / REPLACEMNT: 6SQ. FT., EXCAVATION = NO. LOCATION: FRONT FACADE."],["2026-10-05",2,2,35,2,0,0,10000,"4534 W 63RD ST, Chicago, IL 60629","SCOPE: REPLACE EXISTING FACADE WITH NEW NON-STRUCTURAL EXTERIOR CLADDING SYSTEM OVER NEW FRAMING. LOCATIONS: 0 RESIDENTIAL UNIT(S), 2 NON-RESIDENTIAL UNIT(S), EXTERIOR WORK, FRONT FACADE"],["2026-10-05",7,5,36,2,0,0,25909,"88 Kearny St, San Francisco, CA 94108","levels: g 1-2, 5, 8-10,12-16, 21-22. 54 evacuation signs."],["2026-10-01",3,7,37,2,0,0,15000,"3150 W WILSHIRE BLVD, Los Angeles, CA 90010","Eplan. Supplemental permit to 26048-10000-00629 to revise E01 16\" channel letters on fascia panel of 2'-7 1/4\" H x 24'-5 1/2\" W, with a total sign area of 63.6 sq. ft.and E02 to 16\" channel letters mounted to fascia panel of 2'-7 1/4\" H x 19'-7\" W, with a total sign area of 51 sq. ft. and revise structural details"],["2026-10-01",7,5,38,2,8,0,21000,"1388 22nd Av, San Francisco, CA 94122","install metal security living room window grill on existing non-egress living room window facing facade. strictly cosmetic work; no structural framing members, headers or load bearing elements will be altered or removed. manual metal security garage gatewithing footprint. integrated ornamental metal"],["2026-09-30",1,9,39,2,0,0,20800,"4432 PLANK RD, Baton Rouge, LA 70805","Commercial Plyon Sign"],["2026-09-30",1,9,40,2,0,0,34500,"440 3RD ST, Baton Rouge, LA 70802","Commercial Wall Sign"],["2026-09-30",2,2,41,2,32,0,27000,"1033 W LOYOLA AVE, Chicago, IL 60626","TUCKPOINTING AND UNIT MASONRY REPAIR / REPLACEMENT: 500 SQ. FT., LINTEL QTY. 0, MAX. LENGTH 0. LOCATION: CRITICAL FACADE INSPECTION/OPENINGS FOR INSPECTION."],["2026-09-30",2,2,42,2,32,0,17000,"2716 N RACINE AVE, Chicago, IL 60614","TUCKPOINTING AND UNIT MASONRY REPAIR / REPLACEMENT: 1500 SQ. FT., LINTEL QTY. 0, MAX. LENGTH 0. LOCATION: FACADE/BRICKWORK."],["2026-09-30",2,2,43,2,32,0,10000,"2455 W SUPERIOR ST, Chicago, IL 60612","TUCKPOINTING AND UNIT MASONRY REPAIR / REPLACEMENT: 600 SQ. FT., LINTEL QTY. 0, MAX. LENGTH 0. LOCATION: FRONT FACADE."],["2026-09-30",3,7,44,2,512,0,34560,"320 N LA CIENEGA BLVD, Los Angeles, CA 90048","INSTALL (4) 40' X 6' TEMPORARY SIGNS ON TEMPORARY CONSTRUCTION SOLID WOOD FENCE. The Temporary Sign on the Temporary Construction Wall must be removed when the work covered by permit 21010-10000-03364 is completed but not to exceed 09/02/2027."],["2026-09-30",3,7,45,2,0,0,25000,"928 S WESTERN AVE, Los Angeles, CA 90006","INSTALL (1) LED DIGITAL DISPLAY WITH FABRICATED SUPPORT FRAME"],["2026-09-30",3,7,46,2,0,0,15500,"843 N NORTH SPRING ST, Los Angeles, CA 90012","ePlan: Illuminated wall sign \"Dayglow\"3'-8\"x18'-6\", Area = 67.8 s.f., 13'-6\" from bottom of sign to finished floor.***1 of 3***"],["2026-09-30",3,7,47,2,0,0,14000,"5077 N LANKERSHIM BLVD, Los Angeles, CA 91601","ePlan. NEW WALL SIGN WITH DIM 10'-6\" X 3'-6\" (AN AREA OF 36.75 SQ FT) LOCATED 9'-10\" A.F.F."],["2026-09-30",3,7,48,2,0,0,12000,"6300 S WESTERN AVE, Los Angeles, CA 90047","New bolted wall sign on miscellaneous structure reading \"WESTERN GAGE COMMUNITY\" at park entrance, approximately 10' from finished grade."],["2026-09-30",8,10,49,2,0,0,40000,"2723 E UNION ST, Seattle, WA 98122","Repair and replace in kind damage from vehicle impact to mixed-use building storefront at Level 1 East facade subject to field inspection (STFI)"],["2026-09-29",2,8,50,2,0,0,12000,"4059 N CICERO AVE, Chicago, IL 60641","BURLINGTON: INTERNALLY ILLUMINATED FACE LIT WALL SIGN (EAST ELEVATION FACING RECEIVING AREA / N KILPATRICK AVE) - 10'-0\" H X 10'-0\" W (100 SQ FT); REPLACES / AMENDS DOB # 101082572 WHICH WAS 345 SQ FT"],["2026-09-29",2,8,50,2,0,0,12000,"4059 N CICERO AVE, Chicago, IL 60641","BURLINGTON: INTERNALLY ILLUMINATED FACE LIT WALL SIGN (SOUTH ELEVATION FACING PARKING LOT / W CUYLER AVE) - 10'-0\" H X 10'-0\" W (100 SQ FT); REPLACES / AMENDS DOB # 101082571 WHICH WAS 345 SQ FT"],["2026-09-29",2,2,51,2,32,0,10000,"2753 W GREGORY ST, Chicago, IL 60625","TUCKPOINTING AND UNIT MASONRY REPAIR / REPLACEMENT: 8 SQ. FT., LINTEL QTY. 8, MAX. LENGTH 8. LOCATION: FRONT FACADE."],["2026-09-29",2,8,50,2,0,0,12000,"4059 N CICERO AVE, Chicago, IL 60641","BURLINGTON: INTERNALLY ILLUMINATED FACE LIT WALL SIGN (SOUTH ELEVATION FACING PARKING LOT / W CUYLER AVE) - 10'-0\" H X 10'-0\" W (100 SQ FT); REPLACES / AMENDS DOB # 101082570 WHICH WAS 36 SQ FT"],["2026-09-29",3,0,52,2,0,0,10000,"16150 W NORDHOFF ST 1105, Los Angeles, CA 91343","ePlan. Storefront wall and glass structural repair ; \"COMPLY WITH DEPARTMENT ORDER effective date 03/11/2026. PERMIT WILL EXPIRE 30 DAYS FROM ISSUANCE DATE\""],["2026-09-29",7,5,53,2,0,0,10000,"22 Day St, San Francisco, CA 94110","legalize existing construction of a 3 level deck and emergency egress at rear of existing 6 unit residential building. add new continuous handrail. reapply front facade window trim. tro comply with dbi internal audit nov 202656102"],["2026-10-12",0,11,54,1,0,0,1,"618 E 6TH ST, Austin, TX 78701","Addition of a New Awning to Shell Building 2024 149559 DA - Concurrent Review"],["2026-10-12",0,11,54,1,0,0,1,"616 E 6TH ST, Austin, TX 78701","Addition of New Awning for Restaurant Shell"],["2026-10-09",3,3,55,1,0,0,500,"1710 E 111TH ST, Los Angeles, CA 90059","*Eplan. Demolish 12'x6', 72sf double faced offsite sign per permit no. 1980LA02859 with takedown credit applied to LA Metro TCN FF-32 or other as needed. OSSPIP case# 377603."],["2026-10-09",3,3,56,1,0,0,500,"817 N WILMINGTON BLVD, Los Angeles, CA 90744","*EPLAN. Demolish 11'x5', 55 sf double faced offsite sign per permit no. 1991LA75950 with takedown credit applied to LA Metro TCN FF-32 or other as needed. OSSPIP case # 298863."],["2026-10-09",3,3,57,1,0,0,501,"6605 S BROADWAY, Los Angeles, CA 90003","Eplan. Demolish 12'x6', 72sf single faced offsite sign per permit no. 1982LA44707 with takedown credit applied to LA Metro TCN FF-33 or other as needed. OSSPIP case# 297879."],["2026-10-09",3,3,58,1,0,0,500,"11202 S WILMINGTON AVE, Los Angeles, CA 90059","*Eplan. Demolish 12'x6', 72 sf single faced offsite sign per permit no. 1986LA32573 with takedown credit applied to LA Metro TCN FF-32 or other as needed. OSSPIP case # 296980."],["2026-10-09",3,3,59,1,0,0,501,"2312 S COMPTON AVE, Los Angeles, CA 90011","Eplan. Demolish 12'x6', 72sf single faced offsite sign per permit no. 1975LA04803 with takedown credit applied to LA Metro TCN FF-33 or other as needed. OSSPIP case# 296813."],["2026-10-09",3,7,60,1,0,0,3500,"1342 N AVALON BLVD, Los Angeles, CA 90744","ONE NEW ILLUMINATED CHANNEL LETTER WALL SIGN. WALL SIGN: 161\" x 48\" (53.7 SF)"],["2026-10-09",3,3,61,1,0,0,500,"3529 S CENTRAL AVE, Los Angeles, CA 90011","*Eplan. Demolition of 8'x9' single faced offsite sign (original permit #1974LA83075)*OSSPIP case #313214Takedown credit to be applied for LA Metro TCN FF-34 or other as needed."],["2026-10-08",2,8,25,1,0,0,7500,"10000 W OHARE AIRPORT","ETIHAD CARGO: INTERNALLY ILLUMINATED FACE LIT WALL SIGN (PATTON DR ELEVATION) - 7'-3\" H X 15-3\" W (111 SQ FT)"],["2026-10-08",3,7,62,1,0,0,5000,"5445 W HOLLYWOOD BLVD, Los Angeles, CA 90027","EPLAN : INSTALL (2) NEW ILLUMINATED WALL SIGNS.\" CHASE AND LOGO\", 190 INCH HIGH FROM GRADE.SIGN B01: 3'-11 1/4\" X 21'-1\" (83.02 SQ FT)SIGN B02: 3'-11 1/4\" X 21'-1\" (83.02 SQ FT)"],["2026-10-08",3,3,63,1,0,0,500,"4077 S AVALON BLVD, Los Angeles, CA 90011","*Eplan. Demolish two 6'x12' single faced offsite sign (original permit #81LA26669)*OSSPIP case #296267*Takedown credit to be applied to LA Metro TCN FF34"],["2026-10-08",3,7,64,1,0,0,3000,"4553 N VAN NUYS BLVD, Los Angeles, CA 91403","INSTALLING 2 WALL SIGNS:SIGN A: ONE NEW ILLUMINATED WALL SIGN WITH DIM 180\" X 36\" WITH AN AREA OF 45 SQ FT LOACTED 117.5\" A.F.F.SIGN B: ONE NEW NON ILLUMINATED WALL SIGN WITH DIM 66\" X 42\" WITH AN AREA OF 19.2 SQ FT LOACTED 118\" A.F.F."],["2026-10-08",3,7,65,1,0,0,2500,"8838 W PICO BLVD, Los Angeles, CA 90035","TWO NEW NON ILLUMINATED WALL:SIGN A WITH DIM 89.51\" X 71.71\" WITH AN AREA OF 45.5 SQ FT LOCATED 16' A.F.F.SIGN B WITH DIM 19.5\" X 257.82\" WITH AN AREA OF 34.9 SQ FT LOCATED 12' A.F.F."],["2026-10-08",7,12,66,1,1,0,9000,"100 Van Ness Av, San Francisco, CA 94102","install 1 electric, wall, single faced sign, \"fedex office\" 3' x 20'3\", illuminated, hanging wall sign."],["2026-10-07",0,11,54,1,0,0,1,"520 E 6TH ST, Austin, TX 78701","Addition of a New Awning to Shell Building 2024 149559 DA - Concurrent Review"],["2026-10-07",0,11,54,1,0,0,1,"723 E 6TH ST, Austin, TX 78701","Addition of a New Awning to Shell Building 24 149563 DA - Concurrent Reviews"],["2026-10-07",3,3,67,1,0,0,501,"919 E MANCHESTER AVE, Los Angeles, CA 90001","Eplan. Demolish 12'x6', 72sf single faced offsite sign per permit no. 1982LA37812 with takedown credit applied to LA Metro TCN FF-33 or other as needed. OSSPIP case# 296861."],["2026-10-07",3,3,57,1,0,0,500,"7933 S BROADWAY, Los Angeles, CA 90003","Eplan. Demolish 12'x6', 72sf single faced offsite sign per permit no. 1982LA43581 with takedown credit applied to LA Metro TCN FF-33 or other as needed. OSSPIP case# 297855."],["2026-10-07",3,3,68,1,0,0,500,"4711 S VERMONT AVE, Los Angeles, CA 90037","Eplan. Demolish 12'x6', 72sf single faced offsite sign per permit no. 1981LA20679 with takedown credit applied to LA Metro TCN FF-33 or other as needed. OSSPIP case# 267061."],["2026-10-07",3,7,69,1,0,0,5000,"5349 S CRENSHAW BLVD, Los Angeles, CA 90043","ePlan. (4) new, onsite (1) painted wall sign (13.16 sf) 15'-0\" from bottom of sign to grade (3) non-illuminated channel letter wall signs (ea. 12.5 sf) 12'-0\" from bottom of sign to grade"],["2026-10-07",3,7,69,1,0,0,5000,"4900 S CRENSHAW BLVD, Los Angeles, CA 90043","ePlan. (2) INTERNALLY ILLUMINATED CHANNEL LETTER WALL SIGNSSIGN A= 1'-1.53\"X13'-6\" @9'-7\"FROM GRADE. TOTAL 15.22SQFTSIGN B=10 5/8\" X 5'-2\" @ 9'-7\" FROM GRADE. TOTAL 4.6SQFT"],["2026-10-07",3,7,70,1,0,0,5000,"22815 W VICTORY BLVD #C, Los Angeles, CA 91307","(3) ILLUMINATED WALL SIGNSSign #1.1: Illuminated Wall Sign [3'-6\" x 17'-11.625\"] (62.89 SF) at 12'-4\" above grade.Sign #1.2: Illuminated Wall Sign [3'-6\" x 17'-11.625\"] (62.89 SF) at 12'-4\" above grade.Sign #2.0: Illuminated Wall Sign [2'-0\" x 10'-3.25\"] (20.54 SF) at 11'-1.25\" above grade."],["2026-10-07",3,3,71,1,0,0,500,"5517 S BROADWAY, Los Angeles, CA 90037","Eplan. Demolish 12'x6', 72sf single faced offsite sign per permit no. 1981LA21364 with takedown credit applied to LA Metro TCN FF-33 or other as needed. OSSPIP case# 297888."],["2026-10-07",7,5,72,1,0,0,1500,"205 28th St, San Francisco, CA 94131","comply with nov#202663364: remove existing overhang awning in front of apartment building to comply with nov #202663364."],["2026-10-06",1,9,73,1,0,0,9500,"10517 KENTSHIRE CT, Baton Rouge, LA 70810",""],["2026-10-06",3,7,74,1,0,0,3000,"3377 W WILSHIRE BLVD #100, Los Angeles, CA 90010","(2) Illuminated Wall Signs: SIGN A & SIGN B .SIGN A: Illuminated Wall Sign of channel letters \"iza\" [1'-4\" x 3'-4\"] & \"CHIC IZAKAYA\" [10\" x 6'-9.3\"] (14.8 SF) at 13' above grade . SIGN B: Illuminated Wall Sign of channel letters \"iza\" [1'-4\" x 3'-4\"] & \"CHIC IZAKAYA\" [10\" x 6'-9.3\"] (14.8 SF) at 13' above grade ."],["2026-10-06",3,7,75,1,0,0,2500,"901 N ALAMEDA ST, Los Angeles, CA 90012","ePlan. Install (2) illuminated wall signs on gas station canopy. 20.445\" x 67.311\" (9.5 sf) ' from grade"],["2026-10-05",2,8,33,1,0,0,2500,"3020 N ASHLAND AVE, Chicago, IL 60657","DRIVE THRU: INTERNALLY ILLUMINATED FACE LIT WALL SIGN (NORTH ELEVATION FACING PARKING LOT) - 1'-6\" H X 7'-0\" W (11 SQ FT)"],["2026-10-05",2,8,33,1,0,0,2500,"3020 N ASHLAND AVE, Chicago, IL 60657","DRIVE THRU: INTERNALLY ILLUMINATED FACE LIT WALL SIGN (WEST ELEVATION FACING DRIVE THRU) - 1'-6\" H X 7'-0\" W (11 SQ FT)"],["2026-10-05",2,8,33,1,0,0,2500,"3020 N ASHLAND AVE, Chicago, IL 60657","DRIVE THRU: INTERNALLY ILLUMINATED FACE LIT WALL SIGN (SOUTH ELEVATION FACING DRIVE THRU / SIDE ENTRANCE) - 1'-6\" H X 7'-0\" W (11 SQ FT)"],["2026-10-05",2,8,33,1,0,0,4500,"3020 N ASHLAND AVE, Chicago, IL 60657","PANERA BREAD: INTERNALLY ILLUMINATED FACE LIT CHANNEL LETTER WALL SIGN (EAST ELEVATION FACING OVER FRONT ENTRANCE) - 2'-11\" H X 7'-9\" W (23 SQ FT)"],["2026-10-05",2,8,76,1,0,0,1000,"123 N WACKER DR, Chicago, IL 60606","FLAT CUT OUT STAINLESS STEEL LETTERS/LOG READING \"TRANSWESTERN\""],["2026-10-05",2,8,77,1,0,0,1500,"1351 W ROSCOE ST, Chicago, IL 60657","DOUBLE SIDED PROJECTING BLADE WALL SIGN; NON-ILLUMINATED; 2 SQ/FT; NORTH ELEVATION; E/W FACING TEXT"],["2026-10-05",2,8,33,1,0,0,6000,"3020 N ASHLAND AVE, Chicago, IL 60657","PANERA BREAD: INTERNALLY ILLUMINATED SINGLE SIDED GROUND SIGN / STATIC MENU BOARD (NORTH PROPERTY LINE) - 4'-9\" H X 7'-5\" W (35 SQ FT)"],["2026-10-05",2,8,33,1,0,0,7500,"3020 N ASHLAND AVE, Chicago, IL 60657","PANERA BREAD: INTERNALLY ILLUMINATED FACE LIT CHANNEL LETTER WALL SIGN ON BACLER PANEL (WEST ELEVATION FACING DRIVE THRU) - 4'-5\" H X 10'-0\" W (44 SQ FT)"],["2026-10-05",2,8,78,1,0,0,7000,"55 E JACKSON BLVD, Chicago, IL 60604","INSTALLATION OF INTERNALLY ILLUMINATED WALL SIGN TO READ \"POTBELLY SANDWICH WORKS\" ON WEST ELEVATION, INSIDE THE BUILDING BUT VIEWABLE FROM THE OUTSIDE. SIGN TO BE CONNECTED TO ALREADY EXISTING CUSTOMER LEADS ONLY - NOTE: BACKGROUND PANEL IS OPAQUE ROUTED AND PAINTED ALUMINUM, ONLY LETTERS AND LOGO TO BE ILLUMINATED"],["2026-10-05",2,8,33,1,0,0,2500,"3020 N ASHLAND AVE, Chicago, IL 60657","DRIVE THRU: INTERNALLY ILLUMINATED FACE LIT WALL SIGN (EAST ELEVATION FACING OVER FRONT ENTRANCE) - 1'-6\" H X 7'-0\" W (11 SQ FT)"],["2026-10-05",2,8,79,1,0,0,3500,"901 E 95TH ST, Chicago, IL 60619","REPLACING EXISTING MONUMENT SIGN WITH A NEW MONUMENT SIGN READING ADVOCATE OUTPATIENT CENTER."],["2026-10-05",2,2,80,1,32,0,2000,"1701 W 83RD ST, Chicago, IL 60620","TUCKPOINTING AND UNIT MASONRY REPAIR / REPLACEMENT: 10 SQ. FT., LINTEL QTY. 1, MAX. LENGTH 9. LOCATION: EAST FACADE."],["2026-10-05",2,8,76,1,0,0,3500,"123 N WACKER DR, Chicago, IL 60606","FACE LIT CHANNEL LETTERS/LOGO READING \"TRANSWESTERN\""],["2026-10-05",2,8,33,1,0,0,7500,"3020 N ASHLAND AVE, Chicago, IL 60657","PANERA BREAD: INTERNALLY ILLUMINATED FACE LIT CHANNEL LETTER WALL SIGN ON BACLER PANEL (NORTH ELEVATION FACING PARKING LOT) - 4'-5\" H X 10'-0\" W (44 SQ FT)"],["2026-10-05",2,8,81,1,0,0,4000,"2184 N ELSTON AVE, Chicago, IL 60614","SIGN A1: CHANNEL LETTERS ABOVE SOUTHEAST WINDOWS ON ELSTON \"CST THERAPEUTIC PRESCHOOL & CHILDREN'S THERAPY\""],["2026-10-05",2,8,33,1,0,0,4500,"3020 N ASHLAND AVE, Chicago, IL 60657","PANERA BREAD: INTERNALLY ILLUMINATED FACE LIT CHANNEL LETTER WALL SIGN (SOUTH ELEVATION FACING DRIVE THRU / SIDE ENTRANCE) - 2'-11\" H X 7'-9\" W (23 SQ FT)"],["2026-10-05",2,8,82,1,0,0,1500,"1925 N CLYBOURN AVE, Chicago, IL 60614","INSTALLATION OF ILLUMINATED BLADE SIGN AT 1925 N CLYBOURN AVE, CHICAGO, IL 60614."],["2026-10-05",3,7,83,1,0,0,3000,"1487 W SUNSET BLVD, Los Angeles, CA 90026","New (1)One illuminated wall sign CreamMoon w/ logo, 2'-6\" x 10', 25sf, 11'-6\" aff."],["2026-10-05",3,7,62,1,512,0,501,"4477 W HOLLYWOOD BLVD, Los Angeles, CA 90027","Supplemental ref to PCIS#: 24048-10000-00983 to \"Change building permit associated with fence construction to 26016-10000-20250\""],["2026-10-05",3,7,84,1,0,0,1500,"110 S FAIRFAX AVE A11, Los Angeles, CA 90036","NEW ILLUMINATED WALL SIGN169 1/4\"X43 3/8\", 51 SQFT, 181\" FROM GRADE TO BOTTOM OF THE SIGN"],["2026-10-05",3,7,85,1,0,0,8000,"3701 W JEFFERSON BLVD, Los Angeles, CA 90016","Three (4) New illuminated wall signs total: (2) Sign A: MENU BOARD WALL SIGN (2'4\" x 4', 9.33sf, 3' above grade)(2) Sign B: \"FAST N EASY EATING THE WIN-DOW FAST N EASY EATING\" (1'-6\" x 19'-6\" , 29.25SF, 7.5' above grade);"],["2026-10-05",7,5,86,1,8,0,500,"2323 Sacramento St, San Francisco, CA 94115","revision to pa# 202401083567. technical infeasibility for garage entrance. new signage."],["2026-10-02",1,9,87,1,0,0,2600,"4171 PERKINS RD, Baton Rouge, LA 70808","Commercial Wall Sign"],["2026-10-02",1,9,88,1,0,0,7500,"7570 JEFFERSON HWY, Baton Rouge, LA 70806","Commercial Wall Sign"],["2026-10-02",2,8,82,1,0,0,1500,"1925 N CLYBOURN AVE, Chicago, IL 60614","INSTALLATION OF BANNER AT 1925 N CLYBOURN AVE, CHICAGO, IL 60614."],["2026-10-02",2,8,89,1,0,0,1500,"2001 N CALIFORNIA AVE, Chicago, IL 60647","INSTALLATION OF ILLUMINATED BLADE SIGN AT LOGAN INN (2001 N CALIFORNIA AVE, CHICAGO, IL 60647)"],["2026-10-02",2,8,90,1,0,0,4000,"3148 S ASHLAND AVE, Chicago, IL 60608","INSTALLING A 47 SQ/FT ILLUMINATED WALL SIGN ON EAST ELEVATION; TOTAL STAFFING"],["2026-10-02",2,8,91,1,0,0,4600,"5515 W IRVING PARK RD, Chicago, IL 60641","LED CHANNEL LETTERSSPORT EXPRESS FITNESS5515 W. IRVING PARK RD. CHICAGO IL 60641"],["2026-10-02",2,8,92,1,0,0,2000,"206 W DIVISION ST, Chicago, IL 60610","PUSH THROUGH ACRYLIC BLADE SIGN - DOUBLE SIDED"],["2026-10-02",2,8,93,1,0,0,5000,"6601 N AVONDALE AVE, Chicago, IL 60631","INSTALL ONE ON-PREMISE ILLUMINATED CHANNEL LETTER WALL SIGN READING \"EXPRESSIVE WEALTH\" ON EAST WALL, FLAT/BOX, 10'5\" L X 3'0\" H X 0'1\" D, 32 SF, 96 LBS."],["2026-10-02",3,7,94,1,0,0,6000,"10235 N RESEDA BLVD, Los Angeles, CA 91324","2 WALL SIGNS: ILLUMINATED CHANNEL LETTER1) READS \"rok\"( 8' x 5'), 14'-9\" above grade2) READS \"rok COFFEE + TEA\" (20' x 5'), 13.33' above grade"],["2026-10-02",3,7,95,1,0,0,2400,"10941 W PICO BLVD 1-3, Los Angeles, CA 90064","(1)NEW ILLUMINATED INDIVIDUAL CHANNEL LETTER WALL SIGN 1' - 10\" X 10'-0\", 18.33 SF."],["2026-10-02",3,7,96,1,0,0,3000,"11555 W OLYMPIC BLVD, Los Angeles, CA 90025","New illuminated wall sign:3'x10', Area = 30 s.f., 14'-0\" from bottom of sign to finished floor.COMPLY WITH DEPARTMENT ORDER effective date 06/22/2026. PERMIT WILL EXPIRE 30 DAYS FROM ISSUANCE DATE. CEIS Case Number is 1084625."],["2026-10-02",3,7,97,1,0,0,3000,"3500 W 6TH ST, Los Angeles, CA 90020","Sign A: New LED Illuminated Channel Letters 596\" x 38\" (157 SF) @ 157 SQ FT Sign B: New Push Thru Wall Sign 60\" x 36\" ( SF) @ 15 SQ FT"],["2026-10-01",1,9,98,1,0,0,3900,"3332 HIGHLAND RD, Baton Rouge, LA 70802","Commercial Wall Sign"],["2026-10-01",3,7,99,1,0,0,9400,"7886 N VAN NUYS BLVD, Los Angeles, CA 91402","(N) FIVE ILLUMINATED WALL SIGNSSIGN A1: 22\" x 24'-7 1/4\" @ 45.1 SQ FT AND 19'-6\" ABOVE GRADESIGN A2: 34\" x 10'-2 1/4\" @ 28.8 SQ FT AND 19'-6\" ABOVE GRADESIGN B: 48\" x 48\" @ 16 SQ FT AND 3'-4\" ABOVE GRADESIGN C1: 18 1/2\" x 20'-9 3/4\" @ 31.2 SQ FT AND 17'-1\" ABOVE GRADESIGN C2: 28 3/4\" x 8'-7 1/2\" @ 20.8 SQ FT AND 17''-1\" ABOVE GRADE"],["2026-10-01",3,7,100,1,0,0,5000,"1000 E WASHINGTON BLVD #120, Los Angeles, CA 90021","INSTALL (3) ILLUMINATED CHANNEL LETTER WALL SIGNS; SIGN A1 & A2 @ 33'-3\" X 3'-6\"' AND SIGN B @ 26'-11\"' X 2'-10\""],["2026-10-01",3,7,99,1,0,0,2500,"7886 N VAN NUYS BLVD, Los Angeles, CA 91402","(N) TEMPORARY BANNER SIGN 14'-0\"x 7'-0\" @ 98 SQ FTSign shall be removed within 30 days of installation"],["2026-10-01",3,13,12,1,0,0,300,"1 S LMU DR, Los Angeles, CA 90045","[ePlan] SITE GRADIGN FOR RECONSTRUCTION OF CONCRETE SLAB LMU BLUFF SIGN"],["2026-10-01",7,5,101,1,0,0,3800,"1125 Mission St, San Francisco, CA 94103","(n) store front roll up at 1125 mission street front facade. not in public right of way"],["2026-09-30",1,9,88,1,0,0,2500,"7150 JEFFERSON HWY, Baton Rouge, LA 70806","Commercial Wall Sign"],["2026-09-30",2,2,7,1,32,0,5000,"2457 N PULASKI RD, Chicago, IL 60639","TUCKPOINTING AND UNIT MASONRY REPAIR / REPLACEMENT: 600 SQ. FT., LINTEL QTY. 0, MAX. LENGTH 0. LOCATION: EXISTING FACADES."],["2026-09-30",2,8,102,1,0,0,4600,"1707 W DIVISION ST, Chicago, IL 60622","1707 W. DIVISION ST. CHICAGO IL 60622LEONA'S LIGHTBOX"],["2026-09-30",2,8,103,1,0,0,4000,"4777 N MILWAUKEE AVE, Chicago, IL 60630","51 SQ/FT ILLUMINATED WALL SIGN; NORTH ELEVATION - WILLOWBRAE"],["2026-09-30",2,8,104,1,1,0,3500,"2735 N LINCOLN AVE, Chicago, IL 60614","ADVANCED WELLNESS & LONGEVITY / COORDINATE PROPERTIESNEW ELECTRICAL ID PROJ SIGN LOCATION: SOUTH ELEVATIONSIGN FACING: LINCOLN AVE.READS: COORDINATE PROPERTIES / ADVANCED WELLNESS & LONGEVITY"],["2026-09-30",2,8,105,1,0,0,6000,"6257 S AUSTIN AVE, Chicago, IL 60638","INSTALLATION OF INTERNALLY ILLUMINATED WALL SIGN TO READ \"HOYNE\" ON THE WEST ELEVATION, CONNECTING TO ALREADY EXISTING CUSTOMER LEADS ONLY - SIGN 2"],["2026-09-30",2,8,103,1,0,0,4000,"4777 N MILWAUKEE AVE, Chicago, IL 60630","51 SQ/FT ILLUMINATED WALL SIGN; WEST ELEVATION - WILLOWBRAE"],["2026-09-30",2,8,105,1,0,0,6000,"6257 S AUSTIN AVE, Chicago, IL 60638","INSTALLATION OF INTERNALLY ILLUMINATED WALL SIGN TO READ \"HOYNE\" ON THE SOUTH ELEVATION, CONNECTING TO ALREADY EXISTING CUSTOMER LEADS ONLY - SIGN 1"],["2026-09-30",3,7,46,1,0,0,2501,"843 N NORTH SPRING ST, Los Angeles, CA 90012","EPLAN: Projecting two face sign \"Coffee\" & \"Brewery\"4'-0\"x1'-0\", Area = 4 s.f., 13'-2\" from bottom of sign to finished floor***3 of 3***"],["2026-09-30",3,7,47,1,0,0,1000,"5077 N LANKERSHIM BLVD, Los Angeles, CA 91601","ePlan. NEW WINDOW SIGN WITH A DIA. OF 1' (AREA 1 SQ FT) LOCATED 4' A.F.F."],["2026-09-30",3,7,46,1,0,0,2501,"843 N NORTH SPRING ST, Los Angeles, CA 90012","ePlan: Illuminated wall sign (58.0 s.f.) \"Niteglow\"3'-8\"x15'-9 7/8\", Area = 58 s.f., 13'-6\" from bottom of sign to finished floor.***2 of 3***"],["2026-09-30",7,12,106,1,0,0,100,"671 Broadway, San Francisco, CA 94133","to comply awning amnesty to legalize awning installed without a permit. 671 broadway"],["2026-09-30",7,5,101,1,2,0,2800,"1263 Mission St, San Francisco, CA 94103","add exterior steps to existing roof deck, at existing gate, add fire escape signage. ref pa# 2013-1017-9622."],["2026-09-30",7,5,107,1,0,0,1,"3751 21st St, San Francisco, CA 94114","revision to pa 202212168564 alter exterior finish materials is facades (no volume or structural changes)"],["2026-09-29",0,14,108,1,4,0,1,"2838 SAN GABRIEL ST, Austin, TX 78705","Interior remodel of SFR Update wiring and plumbing. Replacing windows like for like. Repair awning. New siding new water heater and new HVAC system. Cosmetic changes throughout"],["2026-09-29",2,8,109,1,0,0,4000,"7001 W GRAND AVE, Chicago, IL 60707","INSTALLATION OF INTERNALLY ILLUMINATED WALL SIGN TO READ \"HOYNE\" ON NORTH ELEVATION, TO CONNECT TO ALREADY EXISTING CUSTOMER LEADS ONLY. - SIGN 1"],["2026-09-29",2,8,105,1,0,0,6000,"6257 S AUSTIN AVE, Chicago, IL 60638","INSTALLATION OF INTERNALLY ILLUMINATED DOUBLE SIDED MONUMENT SIGN TO READ \"HOYNE\" ON THE EAST ELEVATION, CONNECTING TO ALREADY EXISTING CUSTOMER LEADS ONLY - SIGN 3"],["2026-09-29",2,8,110,1,0,0,2000,"1251 S HALSTED ST, Chicago, IL 60607","CHANNEL LETTERS ON RACEWAY READING \"POPEYES\""],["2026-09-29",2,8,111,1,0,0,3500,"804 W MONTROSE AVE, Chicago, IL 60613","ERECT NEW SIGN ON EAST SIDE OF EXISTING RETAIL BUILDING TO EXTEND OVER THE PUBLIC WAY & READ \"TRADER JOE'S PARKING\""],["2026-09-29",2,8,112,1,0,0,154,"310 S RACINE AVE, Chicago, IL 60607","INSTALLATION OF ENTRANCE SIGN ON THE WEST ELEVATION."],["2026-09-29",2,8,109,1,0,0,4000,"7001 W GRAND AVE, Chicago, IL 60707","INSTALLATION OF INTERNALLY ILLUMINATED DOUBLE-SIDED MONUMENT SIGN TO READ \"HOYNE\" ON NORTH ELEVATION , CONNECTING TO EXISTING CUSTOMER LEADS ONLY - SIGN 4"],["2026-09-29",2,8,109,1,0,0,4000,"7001 W GRAND AVE, Chicago, IL 60707","INSTALLATION OF NON-ILLUMINATED WALL SIGN TO READ \"HOYNE\" ON EAST ELEVATION ONLY- SIGN 3"],["2026-09-29",2,8,50,1,0,0,3200,"4045 N CICERO AVE, Chicago, IL 60641","INSTALLATION OF ONE (1) SINGLE-SIDED, INTERNALLY ILLUMINATED SIGN CABINET ON WEST ELEVATION AND CONNECT TO SUPPLIED LEADS."],["2026-09-29",2,8,112,1,0,0,382,"310 S RACINE AVE, Chicago, IL 60607","INSTALLATION OF DOUBLE FACE BANNER FOR BRIGHTPATH ON EXISTING POSTS ON W. JACKSON BLVD. ELEVATION"],["2026-09-29",2,8,50,1,0,0,3200,"4045 N CICERO AVE, Chicago, IL 60641","INSTALLATION OF ONE (1) SINGLE-SIDED, INTERNALLY ILLUMINATED SIGN CABINET ON NORTH ELEVATION AND CONNECT TO SUPPLIED LEADS."],["2026-09-29",2,8,111,1,0,0,3500,"804 W MONTROSE AVE, Chicago, IL 60613","ERECT NEW SIGN ON EAST SIDE OF EXISTING BUILDING TO EXTEND OVER THE PUBLIC WAY AND READ \"TRADER JOE'S PARKING\""],["2026-09-29",2,8,109,1,0,0,4000,"7001 W GRAND AVE, Chicago, IL 60707","INSTALLATION OF INTERNALLY ILLUMINATED WALL SIGN TO READ \"HOYNE\" ON WEST ELEVATION, TO CONNECT TO ALREADY EXISTING CUSTOMER LEADS ONLY. - SIGN 2"],["2026-09-29",2,8,113,1,0,0,700,"400 N ABERDEEN ST, Chicago, IL 60642","FLAT CUT OUT TENANT GRAPHICS READING \"MARS SNACKING NORTH AMERICA\""],["2026-09-29",2,8,50,1,0,0,3200,"4045 N CICERO AVE, Chicago, IL 60641","INSTALLATION OF ONE (1) SINGLE-SIDED, INTERNALLY ILLUMINATED SIGN CABINET ON EAST ELEVATION AND CONNECT TO SUPPLIED LEADS."],["2026-09-29",2,8,111,1,0,0,2975,"804 W MONTROSE AVE, Chicago, IL 60613","ERECT NEW VERTICAL BLADE SIGN ON SOUTH SIDE OF EXISTING BUILDING, TO READ \"TRADER JOE'S\""],["2026-09-29",2,8,110,1,0,0,2000,"1251 S HALSTED ST, Chicago, IL 60607","CHANNEL LETTERS ON RACEWAY READING \"POPEYES\""],["2026-09-29",3,7,114,1,0,0,5180,"10250 W SANTA MONICA BLVD, Los Angeles, CA 90067","INSTALL (2) ILLUMINATED CHANNEL LETTER WALL SIGN @ 16'-11 7/8\" X 1'-11 1/8\" (22.86 SF) AND 1'-8 1/2\" X 4'-0\" (6.83 SF)"],["2026-09-29",3,7,115,1,0,0,2000,"21321 W COSTANSO ST, Los Angeles, CA 91364","ePlan INSTALL (1) NON-ILLUMINATED IDENTIFICATION SIGN @ 3' X 6'-6\" (20 SF)"],["2026-09-29",3,7,116,1,0,0,1500,"19369 W VICTORY BLVD, Los Angeles, CA 91335","1 ILLUMINATED WALL SIGN 1'-4 1/4\"H X 13' 6 3/8 W @ 18.3 SQ FT 12'-8\" HIGH FROM GRADE TO THE BOTTOM OF THE SIGN."],["2026-09-29",3,7,117,1,0,0,3000,"8207 W 3RD ST, Los Angeles, CA 90048","Eplan. One ( 11' x 2.33') Illuminated Acrylic Wall Sign w/ Faux Neon Letters wall sign on Aluminum box backer."],["2026-09-29",3,7,118,1,0,0,5500,"4800 S ALLA ROAD, Los Angeles, CA 90066","1 ILLUMINATED WALL SIGN1'10\" H X 21'3 3/8\"W @ 39.02 SQ.FT 31'1\" GRADE TO BOTTOM OF SIGN."],["2026-09-29",3,3,119,1,0,0,500,"3810 S MAIN ST, Los Angeles, CA 90037","Eplan. Demolish 12'x6', 72sf single faced offsite sign per permit no. 1981LA21631 with takedown credit applied to LA Metro TCN FF-33 or other as needed. OSSPIP case# 300203."],["2026-09-29",7,12,120,1,1,0,600,"2750 21st St, San Francisco, CA 94110","install non electric single face awning (serve-u-market)"],["2026-09-29",7,1,121,1,0,0,1,"1721 15th St, San Francisco, CA 94103","front bldg: evacuation signage for new construction, reference pa# 202505065847."],["2026-10-12",0,15,122,0,1,0,null,"10901 N LAMAR BLVD BLDG B, Austin, TX 78753","RED CLAW 88 Front sign Lamar"],["2026-10-12",0,16,54,0,1,0,null,"618 E 6TH ST, Austin, TX 78701","Addition of a New Awning to Shell Building 2024 149559 DA - Concurrent Review"],["2026-10-12",0,15,123,0,1,0,null,"3801 N CAPITAL OF TEXAS HWY NB, Austin, TX 78746","Edward Jones 4050 - install one (1) set of halo lit channel letters on storefront"],["2026-10-12",0,16,54,0,1,0,null,"616 E 6TH ST, Austin, TX 78701","Addition of New Awning for Restaurant Shell"],["2026-10-12",0,15,124,0,1,0,null,"706 W BEN WHITE BLVD SVRD WB BLDG A, Austin, TX 78704","Wall sign reading ARC on North Elevation ST 3"],["2026-10-12",0,15,122,0,1,0,null,"10901 N LAMAR BLVD BLDG B, Austin, TX 78753","RED CLAW 88 Side sign Lamar"],["2026-10-12",0,17,125,0,1,0,null,"920 CONGRESS AVE, Austin, TX 78701","Swift House Congress - Blade Sign"],["2026-10-09",0,15,126,0,1,0,null,"2823 E MARTIN LUTHER KING JR BLVD UNIT 105, Austin, TX 78702","Sign 1: Front lit Building sign channel letter reading Pure green On West elevation"],["2026-10-09",0,15,126,0,1,0,null,"2823 E MARTIN LUTHER KING JR BLVD UNIT 105, Austin, TX 78702","Blade sign reading Pure green on West elevation"],["2026-10-09",0,15,127,0,1,0,null,"9707 ANDERSON MILL RD, Austin, TX 78750","front lit channel letter sign reading AGELESS WOMENS HEALTH ON SOUTH ELEVATION"],["2026-10-09",0,15,128,0,1,0,null,"14125 THE LAKES BLVD UNIT 101, Austin, TX 78660","Front lit channel letter sign reading ( the exercise coach) on South elevation"],["2026-10-09",0,18,129,0,0,0,null,"2211 S IH 35 SVRD NB, Austin, TX 78741","Demolition of existing surfaces for the installation of EV chargers and lit canopy. Grading of surfaces associated with EVSE to comply with ADA requirements. Install (1) utility transformer Install (1) switchboard assembly. Install (4) 400KW ALPITRONIC HYC400 EV chargers. Install (7) EV sign posts. Install (1) accessible EV sign posts."],["2026-10-09",2,2,130,0,0,0,null,"630 N STATE ST, Chicago, IL 60654","TEMPORARY SCAFFOLDING: QTY: 1, MAX. LENGTH: 150 FT., MAX. HEIGHT: 270 FT. LOCATION: ALL EXTERIOR FACADE ELEVATIONS. PERMIT EXPIRATION DATE: 365 DAYS FROM PERMIT ISSUED DATE"],["2026-10-07",0,15,131,0,1,0,null,"4616 TRIANGLE AVE BLDG 4 UNIT 405, Austin, TX 78751","FSG to install Blade sign"],["2026-10-07",0,15,132,0,1,0,null,"2324 E CESAR CHAVEZ ST, Austin, TX 78702","Almost Real Things - Wall Sign"],["2026-10-07",0,15,131,0,1,0,null,"4616 TRIANGLE AVE BLDG 4 UNIT 405, Austin, TX 78751","FSG to install sign package - Channel letters SALON LOFT"],["2026-10-07",0,19,108,0,4,0,null,"2838 SAN GABRIEL ST, Austin, TX 78705","Interior remodel of SFR Update wiring and plumbing. Replacing windows like for like. Repair awning. New siding new water heater and new HVAC system. Cosmetic changes throughout"],["2026-10-07",5,20,133,0,0,0,null,"4296 W THOMAS RD, Phoenix, AZ 85019","COMMERCIAL SIGN APPLICATON REVIEW"],["2026-10-07",5,20,133,0,0,0,null,"4296 W THOMAS RD, Phoenix, AZ 85019","COMMERCIAL SIGN APPLICATON REVIEW"],["2026-10-06",4,21,134,0,0,0,null,"6101 PINE ST, Philadelphia, PA 19143","Signs (Accessory / Non-Accessory)"],["2026-10-06",4,21,135,0,0,0,null,"4215 RIDGE AVE, Philadelphia, PA 19129","Signs (Accessory / Non-Accessory)"],["2026-10-06",4,22,136,0,0,0,null,"1616 S CAMAC ST, Philadelphia, PA 19148","EZ Masonry Facade Replacement"],["2026-10-06",4,23,137,0,0,0,null,"9307 KREWSTOWN RD, Philadelphia, PA 19115","Sign"],["2026-10-05",0,24,138,0,392,0,null,"6811 WAKE FOREST LN, Austin, TX 78723","Addition/remodel. Demolish rear patio awning. Conversion of attached garage into a bedroom bathroom and laundry room. Interior remodel. Reconfigure interior layout. Upgrade kitchen window and door replacement. Addition/remodel will result in a 3 bedroom 2 bathroom single family residence. Roll in scope of work from expired MP#: 2012-048104."],["2026-10-05",0,15,139,0,1,0,null,"7200 SPRINGFIELD DR, Austin, TX 78744","PANDA EXPRESS S1 on east facade"],["2026-10-05",0,15,139,0,1,0,null,"7200 SPRINGFIELD DR, Austin, TX 78744","PANDA EXPRESS S4 on east facade"],["2026-10-05",0,15,139,0,1,0,null,"7200 SPRINGFIELD DR, Austin, TX 78744","PANDA EXPRESS S3 on north facade"],["2026-10-05",0,15,139,0,1,0,null,"7200 SPRINGFIELD DR, Austin, TX 78744","PANDA EXPRESS S2 on south facade"],["2026-10-05",0,19,138,0,396,0,null,"6811 WAKE FOREST LN, Austin, TX 78723","Addition/remodel. Demolish rear patio awning. Conversion of attached garage into a bedroom bathroom and laundry room. Interior remodel. Reconfigure interior layout. Upgrade kitchen window and door replacement. Addition/remodel will result in a 3 bedroom 2 bathroom single family residence. Roll in scope of work from expired MP#: 2012-048104."],["2026-10-05",2,2,26,0,0,0,null,"909 W WASHINGTON BLVD, Chicago, IL 60607","TEMPORARY SCAFFOLDING: QTY: 1, MAX. LENGTH: 100 FT., MAX. HEIGHT: 110 FT. LOCATION: FACADE. PERMIT EXPIRATION DATE: 365 DAYS FROM PERMIT ISSUED DATE THIS PERMIT IS NOT VALID WITHOUT CORRESPONDING CDOT PUBLIC WAY PERMIT."],["2026-10-05",4,21,140,0,0,0,null,"3401 CHESTNUT ST, Philadelphia, PA 19104","Signs (Accessory / Non-Accessory)"],["2026-10-05",4,23,141,0,0,0,null,"4300 MONUMENT RD, Philadelphia, PA 19131","Sign"],["2026-10-05",4,23,142,0,0,0,null,"2327-83 COTTMAN AVE, Philadelphia, PA 19149","Sign"],["2026-10-05",4,23,143,0,0,0,null,"4643-45 FRANKFORD AVE, Philadelphia, PA 19124","Sign"],["2026-10-05",4,23,144,0,0,0,null,"114 CHESTNUT ST, Philadelphia, PA 19106","Sign"],["2026-10-05",4,22,145,0,0,0,null,"5508 BLAKEMORE ST, Philadelphia, PA 19138","EZ Masonry Facade Replacement"],["2026-10-05",5,25,146,0,0,0,null,"20400 N 56TH ST","EMERGENCY ACCESS SIGNAGE & STRIPING"],["2026-10-05",5,20,147,0,0,0,null,"2120 N CENTRAL AVE, Phoenix, AZ 85004","COMMERCIAL SIGN APPLICATON REVIEW"],["2026-10-05",5,20,147,0,0,0,null,"2120 N CENTRAL AVE, Phoenix, AZ 85004","COMMERCIAL SIGN APPLICATON REVIEW"],["2026-10-04",4,21,148,0,0,0,null,"1421 WALNUT ST, Philadelphia, PA 19102","Signs (Accessory / Non-Accessory)"],["2026-10-03",0,24,108,0,4,0,null,"2838 SAN GABRIEL ST, Austin, TX 78705","Interior remodel of SFR Update wiring and plumbing. Replacing windows like for like. Repair awning. New siding new water heater and new HVAC system. Cosmetic changes throughout"],["2026-10-02",0,26,149,0,393,0,null,"1915 W 36TH ST, Austin, TX 78731","Addition of new dwelling unit added above existing garage with 1 bathroom and studio/kitchen space. Existing garage remodel on first floor is being permitted retroactively garage has new facade with existing foundation which was completed around 2019."],["2026-10-02",5,25,150,0,0,0,null,"4596 E CACTUS RD, Phoenix, AZ 85032","EMERGENCY ACCESS SIGNAGE & STRIPING"],["2026-10-02",5,25,150,0,0,0,null,"4598 E CACTUS RD, Phoenix, AZ 85032","EMERGENCY ACCESS SIGNAGE & STRIPING"],["2026-10-01",0,27,151,0,1,0,null,"6500 S US 183 HWY SB, Austin, TX 78744","Circle K Pole Sign"],["2026-10-01",0,28,152,0,4,0,null,"6801 RIVER PLACE BLVD, Austin, TX 78726","ePlan: Expedited Review - Phase 2 - Shell renovations to Atrium Fire Suppression System Smoke Evac System Walkways Int. Storefront Paseo and Restrooms in Section 130 (175935 SF). Total area for Core & Shell (1181697 SF) (142143146147-Level 1 and Level 5 Fire suppression Fire Alarm Emergency lighting and Stairwells o 141144145148 - All Levels - Fire suppression Fire Alarm Emergency lighting and Stairwells)"],["2026-09-30",2,2,153,0,0,0,null,"565 W QUINCY ST, Chicago, IL 60661","TEMPORARY SCAFFOLDING: QTY: 1, MAX. LENGTH: 160 FT., MAX. HEIGHT: 210 FT. LOCATION: ALL EXTERIOR FACADE ELEVATIONS. PERMIT EXPIRATION DATE: 365 DAYS FROM PERMIT ISSUED DATE"],["2026-09-30",4,21,154,0,0,0,null,"1420 LOCUST ST, Philadelphia, PA 19102","Signs (Accessory / Non-Accessory)"],["2026-09-30",4,23,155,0,0,0,null,"7620 LINDBERGH BLVD, Philadelphia, PA 19153","Sign"],["2026-09-30",4,23,156,0,0,0,null,"2500-30 WELSH RD, Philadelphia, PA 19152","Sign"],["2026-09-30",4,23,157,0,0,0,null,"7124-62 RIDGE AVE, Philadelphia, PA 19128","Sign"],["2026-09-30",4,23,158,0,0,0,null,"1134 DICKINSON ST, Philadelphia, PA 19147","Sign"],["2026-09-30",4,23,159,0,0,0,null,"111-31 W HUNTING PARK AVE, Philadelphia, PA 19140","Sign"],["2026-09-29",0,15,160,0,1,0,null,"130 E BEN WHITE BLVD SVRD WB, Austin, TX 78704","UFCU E01.1 East Elevation Illuminated (Duplicate Sign)"],["2026-09-29",0,15,161,0,1,0,null,"5210 N LAMAR BLVD, Austin, TX 78756","52 TEN Awning Sign"],["2026-09-29",0,29,160,0,1,0,null,"130 E BEN WHITE BLVD SVRD WB, Austin, TX 78704","UFCU Awning Sign E03"],["2026-09-29",0,15,161,0,1,0,null,"5210 N LAMAR BLVD, Austin, TX 78756","52 TEN Wall Sign"],["2026-09-29",2,2,162,0,32,0,null,"426 W SURF ST, Chicago, IL 60657","TEMPORARY SCAFFOLDING: QTY: 1, MAX. LENGTH: 50 FT., MAX. HEIGHT: 60 FT. LOCATION: TUCKPOINTING & CAULKING ON FRONT FACADE. PERMIT EXPIRATION DATE: 365 DAYS FROM PERMIT ISSUED DATE THIS PERMIT IS NOT VALID WITHOUT CORRESPONDING CDOT PUBLIC WAY PERMIT."],["2026-09-29",4,23,163,0,0,0,null,"5511 GREENE ST, Philadelphia, PA 19144","Sign"]]};
+const SECTION = "signs";
+const PAGE = "signs.html";
+const FILESLUG = "signs";
+const state = {city:"", ptype:"", trade:"", week:"", size:"", q:"", sort:"issued", dir:"desc"};
+const open = new Set();
+const PAGE_SIZE = 25;
+const FREE_ROWS = 17;
+const pageOf = {};
+let account = null;
+const SORT_LABEL = {issued:"issue date", address:"address", trade:"trade", value:"job value"};
+let subscribed = false;
+let savedAlert = null;
+const $ = (id) => document.getElementById(id);
+
+function pretty(iso){
+  const d = new Date(iso + "T00:00:00");
+  return d.toLocaleDateString("en-US", {month:"short", day:"numeric"});
+}
+function money(n){
+  if (n == null) return "Not published";
+  return "$" + Math.round(n).toLocaleString("en-US");
+}
+function matches(row){
+  const city = DATA.cities[row[1]];
+  if (state.city && city.id !== state.city) return false;
+  if (state.ptype && DATA.types[row[2]] !== state.ptype) return false;
+  if (state.trade && !(row[5] & (1 << DATA.trades.indexOf(state.trade)))) return false;
+  if (state.week !== "" && String(row[6]) !== state.week) return false;
+  if (state.size !== "" && String(row[4]) !== state.size) return false;
+  if (state.q){
+    const blob = (DATA.types[row[2]] + " " + (row[8] || "") + " " + (row[9] || "") + " " + city.label).toLowerCase();
+    if (!blob.includes(state.q)) return false;
+  }
+  return true;
+}
+function tradeNames(row){
+  const names = [];
+  for (let i = 0; i < DATA.trades.length; i++){
+    if (row[5] & (1 << i)) names.push(DATA.trades[i]);
+  }
+  names.sort((a, b) => a.localeCompare(b));
+  return names.join(", ");
+}
+function keyOf(row, key){
+  if (key === "issued") return row[0];
+  if (key === "type") return DATA.types[row[2]];
+  if (key === "address") return row[8] || null;
+  if (key === "scope") return row[9] || null;
+  if (key === "trade") return tradeNames(row) || null;
+  return row[7];
+}
+function cmpKey(a, b, key, dir){
+  const ka = keyOf(a, key), kb = keyOf(b, key);
+  if (ka == null && kb == null) return 0;
+  if (ka == null) return 1;
+  if (kb == null) return -1;
+  if (ka < kb) return dir === "desc" ? 1 : -1;
+  if (ka > kb) return dir === "desc" ? -1 : 1;
+  return 0;
+}
+function cmp(a, b){
+  return cmpKey(a, b, state.sort, state.dir) || cmpKey(a, b, "issued", "desc") || cmpKey(a, b, "address", "asc");
+}
+function pageWindow(page, pages){
+  if (pages <= 7) return Array.from({length: pages}, (_, i) => i + 1);
+  const keep = new Set([1, pages, page - 1, page, page + 1].filter((n) => n >= 1 && n <= pages));
+  const out = [];
+  let prev = 0;
+  for (let n = 1; n <= pages; n++){
+    if (!keep.has(n)) continue;
+    if (prev && n - prev > 1) out.push(null);
+    out.push(n);
+    prev = n;
+  }
+  return out;
+}
+function pagerRow(type, page, pages, blurred){
+  const tr = document.createElement("tr");
+  tr.className = "pager";
+  const td = document.createElement("td");
+  td.colSpan = 5;
+  const nav = document.createElement("nav");
+  nav.setAttribute("aria-label", "Table pages");
+  pageWindow(page, pages).forEach((n) => {
+    if (n === null){
+      const gap = document.createElement("span");
+      gap.className = "gap";
+      gap.textContent = "…";
+      nav.appendChild(gap);
+      return;
+    }
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.dataset.page = String(n);
+    btn.dataset.ptype = type;
+    btn.textContent = String(n);
+    if (n === page){
+      btn.setAttribute("aria-current", "page");
+      btn.disabled = true;
+    }
+    nav.appendChild(btn);
+  });
+  td.appendChild(nav);
+  if (blurred){
+    const hint = document.createElement("button");
+    hint.type = "button";
+    hint.className = "hint";
+    hint.dataset.signin = "1";
+    hint.textContent = "Sign in to read these rows";
+    td.appendChild(hint);
+  }
+  tr.appendChild(td);
+  return tr;
+}
+function resetPages(){
+  Object.keys(pageOf).forEach((key) => { delete pageOf[key]; });
+}
+function columnHead(){
+  const tr = document.createElement("tr");
+  tr.className = "cols";
+  [["issued", "Issued"], ["address", "Address"], [null, "Scope of work"], ["trade", "Trade"], ["value", "Job value"]].forEach(([key, label]) => {
+    const th = document.createElement("th");
+    if (!key){
+      th.className = "plain";
+      th.textContent = label;
+      tr.appendChild(th);
+      return;
+    }
+    th.dataset.sort = key;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    const arr = document.createElement("span");
+    arr.className = "arr";
+    btn.append(document.createTextNode(label + " "), arr);
+    th.appendChild(btn);
+    tr.appendChild(th);
+  });
+  return tr;
+}
+function paintHeads(){
+  document.querySelectorAll("th[data-sort]").forEach((th) => {
+    const on = th.dataset.sort === state.sort;
+    th.setAttribute("aria-sort", on ? (state.dir === "asc" ? "ascending" : "descending") : "none");
+    th.querySelector(".arr").textContent = on ? (state.dir === "desc" ? "↓" : "↑") : "";
+  });
+}
+function paintAccount(){
+  const btn = $("signin");
+  if (account){
+    btn.textContent = account.label;
+    btn.title = "Sign out";
+  } else {
+    btn.textContent = "Sign in";
+    btn.title = "";
+  }
+  const accountLink = $("nav-account");
+  if (accountLink) {
+    accountLink.hidden = !account;
+    accountLink.href = memberUrl("portal.html");
+  }
+  const sub = $("headsub");
+  if (sub) {
+    sub.hidden = subscribed;
+    sub.href = checkoutUrl();
+  }
+}
+function openGate(){
+  if (subscribed) return;
+  hideSortTip();
+  $("login-err").hidden = true;
+  $("gate").hidden = false;
+}
+let sortTip;
+function hideSortTip(){
+  if (sortTip) sortTip.hidden = true;
+}
+function showSortTip(th){
+  if (!sortTip){
+    sortTip = document.createElement("div");
+    sortTip.className = "sort-tip";
+    sortTip.hidden = true;
+    sortTip.innerHTML = '<a href="./#signin">Sign in or sign up</a> for custom sorting.';
+    document.body.appendChild(sortTip);
+    sortTip.querySelector("a").addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      hideSortTip();
+      openGate();
+    });
+  }
+  const rect = th.getBoundingClientRect();
+  sortTip.hidden = false;
+  sortTip.style.top = (rect.bottom + 6) + "px";
+  sortTip.style.left = Math.max(8, Math.min(rect.left, window.innerWidth - 236)) + "px";
+}
+function closeGate(){
+  $("gate").hidden = true;
+}
+function memberUrl(file){
+  const url = new URL("/prototype2/" + file, location.origin);
+  if (state.city) url.searchParams.set("city", state.city);
+  if (file === "checkout.html" || file === "signup.html") {
+    url.searchParams.set("next", location.pathname + location.search);
+  }
+  return url;
+}
+function checkoutUrl(){
+  return memberUrl("checkout.html");
+}
+function pathCity(){
+  const parts = location.pathname.split("/").filter(Boolean);
+  if (parts.length < 2 || !/^\d{4}-\d{2}-\d{2}$/.test(parts[1]) || parts[0] === "sales-archive") return "";
+  const id = parts[0].toLowerCase();
+  return DATA.cities.some((c) => c.id === id) ? id : "";
+}
+function fillWeeks(){
+  const sel = $("week");
+  const city = DATA.cities.find((c) => c.id === state.city);
+  if (!city){
+    sel.innerHTML = '<option value="">Latest week</option>';
+    state.week = "";
+    return;
+  }
+  let html = "";
+  city.weeks.forEach((w, i) => {
+    const latest = i === city.weeks.length - 1;
+    html += '<option value="' + (latest ? "" : i) + '">' + (latest ? "Latest · " : "Earlier · ") + w.range + "</option>";
+  });
+  sel.innerHTML = html;
+  sel.value = state.week;
+}
+function esc(s){
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
+}
+function typeNames(){
+  const seen = new Set();
+  DATA.rows.forEach((row) => {
+    const city = DATA.cities[row[1]];
+    if (state.city && city.id !== state.city) return;
+    if (!state.city && !subscribed) return;
+    if (state.week !== "" && String(row[6]) !== state.week) return;
+    seen.add(DATA.types[row[2]]);
+  });
+  return [...seen].sort((a, b) => a.localeCompare(b));
+}
+function fillTypes(){
+  const names = typeNames();
+  if (state.ptype && !names.includes(state.ptype)) state.ptype = "";
+  $("ptype").innerHTML = '<option value="">All permit types</option>' + names.map((t) => '<option value="' + esc(t) + '">' + esc(t) + "</option>").join("");
+  $("ptype").value = state.ptype;
+}
+function fillFilterValues(){
+  const field = $("filter-field").value;
+  const sel = $("filter-value");
+  let html = "";
+  let current = "";
+  if (field === "trade"){
+    html = '<option value="">All trades</option>' + DATA.trades.map((t) => '<option value="' + esc(t) + '">' + esc(t) + "</option>").join("");
+    current = state.trade;
+  } else if (field === "ptype"){
+    html = '<option value="">All permit types</option>' + typeNames().map((t) => '<option value="' + esc(t) + '">' + esc(t) + "</option>").join("");
+    current = state.ptype;
+  } else if (field === "size"){
+    html = $("size").innerHTML;
+    current = state.size;
+  } else {
+    html = $("week").innerHTML;
+    current = state.week;
+  }
+  sel.innerHTML = html;
+  if ([...sel.options].some((opt) => opt.value === current)) sel.value = current;
+}
+function paintFilter(){
+  const active = [state.trade, state.ptype, state.size, state.week].filter((v) => v !== "").length;
+  const btn = $("filter-btn");
+  btn.classList.toggle("on", active > 0);
+  btn.querySelector("span").textContent = active ? "Filter (" + active + ")" : "Filter";
+}
+function pageHref(city){
+  if (!city) return PAGE;
+  return PAGE + "?city=" + encodeURIComponent(city);
+}
+function paintSections(){
+  document.querySelectorAll("#sections a").forEach((a) => {
+    a.href = pageHref(state.city).replace(PAGE, a.dataset.path);
+    const on = a.dataset.section === SECTION;
+    a.classList.toggle("on", on);
+    if (on) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
+  });
+}
+function paintCities(){
+  paintSections();
+  const nav = $("cities");
+  nav.replaceChildren();
+  if (subscribed){
+    const all = document.createElement("a");
+    all.href = PAGE;
+    all.dataset.city = "";
+    all.textContent = "All";
+    if (!state.city){
+      all.className = "on";
+      all.setAttribute("aria-current", "page");
+    }
+    nav.appendChild(all);
+  }
+  DATA.cities.forEach((c) => {
+    const a = document.createElement("a");
+    a.href = pageHref(c.id);
+    a.dataset.city = c.id;
+    a.textContent = c.label;
+    if (c.id === state.city){
+      a.className = "on";
+      a.setAttribute("aria-current", "page");
+    }
+    nav.appendChild(a);
+  });
+}
+function fitHeader(){
+  const bar = document.querySelector(".top-inner");
+  if (bar) document.body.style.paddingTop = bar.offsetHeight + "px";
+}
+function syncUrl(){
+  const url = new URL(location.href);
+  [["city", state.city], ["ptype", state.ptype], ["trade", state.trade], ["size", state.size]].forEach(([key, value]) => {
+    if (value) url.searchParams.set(key, value);
+    else url.searchParams.delete(key);
+  });
+  if (state.city && state.city === pathCity()) url.searchParams.delete("city");
+  history.replaceState(null, "", url);
+}
+function setCity(id){
+  state.city = id || "";
+  state.week = "";
+  state.ptype = "";
+  open.clear();
+  resetPages();
+  syncUrl();
+  render();
+}
+function fillSelects(){
+  paintCities();
+  fitHeader();
+  const cityHtml = '<option value="">' + (subscribed ? "All cities" : "Select a city") + "</option>" + DATA.cities.map((c) => '<option value="' + c.id + '">' + c.label + "</option>").join("");
+  $("city").innerHTML = cityHtml;
+  $("city").value = state.city;
+  fillTypes();
+  $("trade").innerHTML = '<option value="">All trades</option>' + DATA.trades.map((t) => '<option value="' + t + '">' + t + "</option>").join("");
+  $("trade").value = state.trade;
+  $("size").value = state.size;
+  fillWeeks();
+}
+function draw(){
+  if (!SORT_LABEL[state.sort]) { state.sort = "issued"; state.dir = "desc"; }
+  if (!subscribed && state.sort !== "issued") { state.sort = "issued"; state.dir = "desc"; }
+  const list = DATA.rows.filter(matches);
+  const body = $("rows");
+  body.replaceChildren();
+  const empty = $("empty");
+  if (!state.city && !subscribed){
+    empty.hidden = false;
+    empty.textContent = "Select a city.";
+    $("count").textContent = "";
+    $("openfull").hidden = true;
+    paintHeads();
+    paintFilter();
+    return;
+  }
+  if (!list.length){
+    empty.hidden = false;
+    empty.textContent = "No records match.";
+    $("count").textContent = "0 records";
+    $("openfull").hidden = true;
+    paintHeads();
+    paintFilter();
+    return;
+  }
+  empty.hidden = true;
+  const buckets = new Map();
+  list.forEach((row) => {
+    const type = DATA.types[row[2]];
+    if (!buckets.has(type)) buckets.set(type, []);
+    buckets.get(type).push(row);
+  });
+  const groups = [...buckets.entries()].map(([type, rows]) => {
+    rows.sort(cmp);
+    return {type, total: rows.length, rows: rows};
+  });
+  groups.sort((a, b) => b.total - a.total || a.type.localeCompare(b.type));
+  const frag = document.createDocumentFragment();
+  groups.forEach((g) => {
+    const expanded = open.has(g.type);
+    const gr = document.createElement("tr");
+    gr.className = "group";
+    const td = document.createElement("td");
+    td.colSpan = 5;
+    const fold = document.createElement("button");
+    fold.type = "button";
+    fold.className = "fold";
+    fold.dataset.fold = g.type;
+    fold.setAttribute("aria-expanded", expanded ? "true" : "false");
+    const chev = document.createElement("span");
+    chev.className = "chev";
+    chev.textContent = expanded ? "▾" : "▸";
+    const name = document.createElement("span");
+    name.textContent = g.type;
+    const n = document.createElement("span");
+    n.className = "n";
+    n.textContent = g.total.toLocaleString();
+    fold.append(chev, name, n);
+    td.appendChild(fold);
+    gr.appendChild(td);
+    frag.appendChild(gr);
+    if (expanded){
+      frag.appendChild(columnHead());
+      const pages = Math.max(1, Math.ceil(g.rows.length / PAGE_SIZE));
+      let page = pageOf[g.type] || 1;
+      if (page > pages) page = pages;
+      if (page < 1) page = 1;
+      pageOf[g.type] = page;
+      const start = (page - 1) * PAGE_SIZE;
+      const slice = g.rows.slice(start, start + PAGE_SIZE);
+      slice.forEach((row, i) => addRow(row, !subscribed && start + i >= FREE_ROWS));
+      if (pages > 1) frag.appendChild(pagerRow(g.type, page, pages, !subscribed && g.rows.length > FREE_ROWS));
+    }
+    function addRow(row, peek){
+      const tr = document.createElement("tr");
+      tr.className = peek ? "data peek" : "data";
+      if (peek){
+        tr.dataset.signin = "1";
+        tr.setAttribute("aria-hidden", "true");
+      }
+      const issued = document.createElement("td");
+      issued.className = "mono";
+      issued.textContent = pretty(row[0]);
+      if (state.sort === "issued") issued.classList.add("sorted");
+      const addr = document.createElement("td");
+      addr.className = "addr";
+      addr.textContent = row[8] || "—";
+      if (state.sort === "address") addr.classList.add("sorted");
+      const scope = document.createElement("td");
+      scope.className = "scope";
+      scope.textContent = row[9] || "—";
+      const trade = document.createElement("td");
+      trade.className = "trade";
+      trade.textContent = tradeNames(row) || "—";
+      if (state.sort === "trade") trade.classList.add("sorted");
+      const val = document.createElement("td");
+      val.className = "mono";
+      val.textContent = money(row[7]);
+      if (state.sort === "value") val.classList.add("sorted");
+      tr.append(issued, addr, scope, trade, val);
+      frag.appendChild(tr);
+    }
+  });
+  body.appendChild(frag);
+  const city = DATA.cities.find((c) => c.id === state.city);
+  const where = city ? city.label : "All cities";
+  const rank = "ranked by " + SORT_LABEL[state.sort];
+  const shown = [...open].reduce((sum, type) => {
+    const group = groups.find((g) => g.type === type);
+    if (!group) return sum;
+    const page = pageOf[type] || 1;
+    return sum + Math.min(PAGE_SIZE, Math.max(0, group.rows.length - (page - 1) * PAGE_SIZE));
+  }, 0);
+  $("count").innerHTML = "<b>" + list.length.toLocaleString() + "</b> records · " + where + " · " + rank + (shown ? " · " + shown + " on this page" : "");
+  const openBtn = $("openfull");
+  openBtn.hidden = subscribed;
+  if (!openBtn.hidden) openBtn.textContent = "Sign in to view all " + list.length.toLocaleString();
+  paintHeads();
+  paintFilter();
+}
+function paintPay(){
+  if (subscribed){
+    $("openfull").hidden = true;
+    $("headsub").hidden = true;
+  }
+}
+function render(){
+  fillSelects();
+  draw();
+  paintPay();
+  paintAccount();
+  if (!$("filter-menu").hidden) fillFilterValues();
+}
+function fromUrl(){
+  const params = new URLSearchParams(location.search);
+  const wanted = (params.get("city") || pathCity()).toLowerCase();
+  const match = DATA.cities.find((c) => c.id === wanted || c.label.toLowerCase() === wanted);
+  state.city = match ? match.id : "";
+  const trade = params.get("trade") || "";
+  state.trade = DATA.trades.includes(trade) ? trade : "";
+  const ptype = params.get("ptype") || "";
+  state.ptype = DATA.types.includes(ptype) ? ptype : "";
+  const size = params.get("size") || "";
+  state.size = ["0", "1", "2", "3", "4", "5"].includes(size) ? size : "";
+  if (state.ptype) open.add(state.ptype);
+}
+fromUrl();
+fillSelects();
+$("cities").addEventListener("click", (e) => {
+  const link = e.target.closest("a[data-city]");
+  if (!link) return;
+  e.preventDefault();
+  setCity(link.dataset.city || "");
+});
+$("city").addEventListener("change", () => setCity($("city").value));
+["ptype","trade","week"].forEach((id) => $(id).addEventListener("change", () => {
+  state.ptype = $("ptype").value;
+  state.trade = $("trade").value;
+  state.week = $("week").value;
+  if (id === "ptype"){
+    open.clear();
+    if (state.ptype) open.add(state.ptype);
+  }
+  resetPages();
+  syncUrl();
+  render();
+}));
+$("size").addEventListener("change", () => {
+  state.size = $("size").value;
+  resetPages();
+  syncUrl();
+  draw();
+});
+$("q").addEventListener("input", () => {
+  state.q = $("q").value.trim().toLowerCase();
+  resetPages();
+  draw();
+});
+$("clear").addEventListener("click", () => {
+  state.ptype = "";
+  state.trade = "";
+  state.week = "";
+  state.size = "";
+  state.q = "";
+  open.clear();
+  resetPages();
+  state.sort = "value";
+  state.dir = "desc";
+  $("q").value = "";
+  $("size").value = "";
+  render();
+});
+function closeFilter(){
+  $("filter-menu").hidden = true;
+  $("filter-btn").setAttribute("aria-expanded", "false");
+}
+function closeDownload(){
+  $("download-menu").hidden = true;
+  $("download-btn").setAttribute("aria-expanded", "false");
+}
+function csvCell(value){
+  const s = value == null ? "" : String(value);
+  return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+}
+function downloadList(){
+  if (!subscribed){
+    $("download-pick").hidden = true;
+    $("download-offer").hidden = false;
+    $("download-sub").href = memberUrl("signup.html");
+    return;
+  }
+  const excel = $("download-format").value === "excel";
+  const header = ["Issued","City","Permit type","Address","Scope of work","Trade","Job value"];
+  const lines = [header.join(",")];
+  DATA.rows.filter(matches).forEach((row) => {
+    const city = DATA.cities[row[1]];
+    lines.push([
+      row[0],
+      city.label,
+      DATA.types[row[2]],
+      row[8] || "",
+      row[9] || "",
+      tradeNames(row),
+      row[7] == null ? "" : String(row[7])
+    ].map(csvCell).join(","));
+  });
+  const blob = new Blob([(excel ? "\uFEFF" : "") + lines.join("\r\n")], {type: "text/csv;charset=utf-8"});
+  const a = document.createElement("a");
+  const city = DATA.cities.find((c) => c.id === state.city);
+  a.href = URL.createObjectURL(blob);
+  a.download = (city ? city.id : "all-cities") + "-" + FILESLUG + (excel ? "-excel.csv" : ".csv");
+  a.click();
+  URL.revokeObjectURL(a.href);
+  closeDownload();
+}
+$("filter-btn").addEventListener("click", (e) => {
+  e.stopPropagation();
+  if ($("filter-menu").hidden){
+    closeDownload();
+    fillFilterValues();
+    $("filter-menu").hidden = false;
+    $("filter-btn").setAttribute("aria-expanded", "true");
+  } else closeFilter();
+});
+$("filter-menu").addEventListener("click", (e) => e.stopPropagation());
+$("filter-field").addEventListener("change", fillFilterValues);
+$("filter-value").addEventListener("change", () => {
+  const field = $("filter-field").value;
+  const value = $("filter-value").value;
+  if (field === "trade") state.trade = value;
+  else if (field === "ptype"){
+    state.ptype = value;
+    open.clear();
+    if (value) open.add(value);
+  } else if (field === "size") state.size = value;
+  else state.week = value;
+  resetPages();
+  render();
+});
+$("download-btn").addEventListener("click", (e) => {
+  e.stopPropagation();
+  if ($("download-menu").hidden){
+    closeFilter();
+    $("download-pick").hidden = false;
+    $("download-offer").hidden = true;
+    $("download-menu").hidden = false;
+    $("download-btn").setAttribute("aria-expanded", "true");
+  } else closeDownload();
+});
+$("download-menu").addEventListener("click", (e) => e.stopPropagation());
+$("download-go").addEventListener("click", downloadList);
+$("download-signin").addEventListener("click", () => { closeDownload(); openGate(); });
+function closeAlert(){
+  $("alert-menu").hidden = true;
+  $("alert-btn").setAttribute("aria-expanded", "false");
+}
+function paintAlert(){
+  $("alert-offer").hidden = subscribed;
+  $("alert-form").hidden = !subscribed;
+  $("alert-btn").classList.toggle("on", !!(savedAlert && savedAlert.enabled));
+  $("alert-off").hidden = !(savedAlert && savedAlert.enabled);
+  $("alert-sub").href = memberUrl("signup.html");
+}
+function fillAlertChoices(){
+  const city = savedAlert && savedAlert.city ? savedAlert.city : state.city;
+  const ptype = savedAlert && savedAlert.permit_type ? savedAlert.permit_type : state.ptype;
+  const trade = savedAlert && savedAlert.trade ? savedAlert.trade : state.trade;
+  const size = savedAlert && savedAlert.size !== undefined && savedAlert.size !== null ? String(savedAlert.size) : state.size;
+  $("alert-city").innerHTML = '<option value="">Any city</option>' + DATA.cities.map((c) => '<option value="' + c.id + '">' + c.label + "</option>").join("");
+  $("alert-city").value = [...$("alert-city").options].some((opt) => opt.value === city) ? city : "";
+  $("alert-type").innerHTML = '<option value="">Any permit type</option>' + DATA.types.map((t) => '<option value="' + t.replace(/"/g, "&quot;") + '">' + t.replace(/</g, "") + "</option>").join("");
+  $("alert-type").value = [...$("alert-type").options].some((opt) => opt.value === ptype) ? ptype : "";
+  $("alert-trade").innerHTML = '<option value="">Any trade</option>' + DATA.trades.map((t) => '<option value="' + t + '">' + t + "</option>").join("");
+  $("alert-trade").value = trade || "";
+  $("alert-size").value = ["0", "1", "2", "3", "4", "5"].includes(size) ? size : "";
+  $("alert-frequency").value = savedAlert && savedAlert.frequency ? savedAlert.frequency : "daily";
+  $("alert-note").textContent = savedAlert && savedAlert.enabled ? "Saved. A short sample goes out when a new record matches." : "";
+}
+function loadAlert(){
+  fetch("/api/index.php?r=alerts", {credentials: "same-origin"}).then((res) => res.json()).then((data) => {
+    savedAlert = data && data.alert ? data.alert : null;
+    paintAlert();
+    if (subscribed && !$("alert-menu").hidden) fillAlertChoices();
+  }).catch(() => {});
+}
+function saveAlert(enabled){
+  const note = $("alert-note");
+  note.textContent = "";
+  const body = {
+    city: $("alert-city").value,
+    permit_type: $("alert-type").value,
+    trade: $("alert-trade").value,
+    size: $("alert-size").value,
+    frequency: $("alert-frequency").value,
+    section: SECTION,
+    enabled: enabled
+  };
+  fetch("/api/index.php?r=alerts", {
+    method: "POST",
+    credentials: "same-origin",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(body)
+  }).then(async (res) => {
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok){
+      note.textContent = data.error || "The alert was not saved.";
+      return;
+    }
+    savedAlert = data.alert || null;
+    paintAlert();
+    if (savedAlert && savedAlert.enabled) note.textContent = "Saved. A short sample goes out when a new record matches.";
+  }).catch(() => {
+    note.textContent = "The alert was not saved.";
+  });
+}
+$("alert-btn").addEventListener("click", (e) => {
+  e.stopPropagation();
+  if ($("alert-menu").hidden){
+    closeFilter();
+    closeDownload();
+    paintAlert();
+    if (subscribed) fillAlertChoices();
+    $("alert-menu").hidden = false;
+    $("alert-btn").setAttribute("aria-expanded", "true");
+  } else closeAlert();
+});
+$("alert-menu").addEventListener("click", (e) => e.stopPropagation());
+$("alert-signin").addEventListener("click", () => { closeAlert(); openGate(); });
+$("alert-form").addEventListener("submit", (e) => { e.preventDefault(); saveAlert(true); });
+$("alert-off").addEventListener("click", () => saveAlert(false));
+document.addEventListener("click", (e) => {
+  closeFilter();
+  closeDownload();
+  closeAlert();
+  if (!e.target.closest("th[data-sort]") && !e.target.closest(".sort-tip")) hideSortTip();
+});
+window.addEventListener("scroll", hideSortTip, true);
+window.addEventListener("resize", fitHeader);
+$("rows").addEventListener("click", (e) => {
+  const pageBtn = e.target.closest("[data-page]");
+  if (pageBtn){
+    pageOf[pageBtn.dataset.ptype] = Number(pageBtn.dataset.page);
+    draw();
+    const status = document.querySelector(".status");
+    if (status){
+      const top = status.getBoundingClientRect().top + window.scrollY - document.querySelector(".top").offsetHeight;
+      window.scrollTo({top: Math.max(0, top), behavior:"auto"});
+    }
+    return;
+  }
+  const th = e.target.closest("th[data-sort]");
+  if (th){
+    const key = th.dataset.sort;
+    if (!subscribed && key !== "issued"){
+      showSortTip(th);
+      return;
+    }
+    hideSortTip();
+    if (state.sort === key) state.dir = state.dir === "desc" ? "asc" : "desc";
+    else {
+      state.sort = key;
+      state.dir = (key === "value" || key === "issued") ? "desc" : "asc";
+    }
+    resetPages();
+    draw();
+    return;
+  }
+  const fold = e.target.closest("[data-fold]");
+  if (fold){
+    const type = fold.dataset.fold;
+    if (open.has(type)) open.delete(type);
+    else {
+      open.clear();
+      open.add(type);
+    }
+    draw();
+    return;
+  }
+  if (e.target.closest("[data-signin]")) openGate();
+});
+$("openfull").addEventListener("click", openGate);
+$("to-checkout").addEventListener("click", () => { location.href = checkoutUrl(); });
+$("signin").addEventListener("click", () => {
+  if (account){
+    fetch("/api/index.php?r=logout", {method:"POST", credentials:"same-origin"}).finally(() => {
+      account = null;
+      subscribed = false;
+      savedAlert = null;
+      closeGate();
+      render();
+      paintAlert();
+    });
+    return;
+  }
+  openGate();
+});
+$("login-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const err = $("login-err");
+  err.hidden = true;
+  fetch("/api/index.php?r=login", {
+    method: "POST",
+    credentials: "same-origin",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({email: $("login-email").value.trim(), password: $("login-password").value})
+  }).then(async (res) => {
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok){
+      err.textContent = data.error || "Sign in failed.";
+      err.hidden = false;
+      return;
+    }
+    account = {label: data.email};
+    subscribed = !!data.subscribed;
+    closeGate();
+    render();
+    if (subscribed) loadAlert();
+    else { savedAlert = null; paintAlert(); }
+  }).catch(() => {
+    err.textContent = "Sign in is unavailable.";
+    err.hidden = false;
+  });
+});
+$("gate-close").addEventListener("click", closeGate);
+$("gate").addEventListener("click", (e) => { if (e.target.id === "gate") closeGate(); });
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  if (!$("download-menu").hidden){ closeDownload(); return; }
+  if (!$("alert-menu").hidden){ closeAlert(); return; }
+  if (!$("filter-menu").hidden){ closeFilter(); return; }
+  closeGate();
+});
+render();
+fetch("/api/index.php?r=me", {credentials:"same-origin"}).then((res) => res.json()).then((data) => {
+  if (data.email) account = {label: data.email};
+  subscribed = !!data.subscribed;
+  render();
+  if (subscribed) { loadAlert(); }
+  else paintAlert();
+}).catch(() => {});
+if (location.hash === "#signin") openGate();
+</script>
+<script>
+if (location.search.indexOf("src=email") !== -1 || location.search.indexOf("src=alert") !== -1) {
+  fetch("/hit.php", {
+    method: "POST",
+    keepalive: true,
+    headers: {"Content-Type": "application/x-www-form-urlencoded"},
+    body: "path=" + encodeURIComponent(location.pathname + location.search)
+  });
+}
+</script>
+</body>
+</html>
