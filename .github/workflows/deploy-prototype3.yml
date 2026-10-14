@@ -39,7 +39,7 @@ jobs:
           protocol: ftp                 # use "ftps" if the host supports FTP-over-TLS
           port: 21
           local-dir: ./prototype3/
-          server-dir: ${{ vars.FTP_SERVER_DIR_P3 }}
+          server-dir: ${{ vars.FTP_SERVER_DIR_P3 || 'public_html/prototype3/' }}
           dangerous-clean-slate: false  # additive; never wipe other files
           exclude: |
             **/__pycache__/**

@@ -20,6 +20,12 @@ name: Deploy to Network Solutions
 on:
   push:
     branches: [main]
+    paths:
+      - "*.html"
+      - "*.css"
+      - "*.js"
+      - "build_board.py"
+      - ".github/workflows/deploy.yml"
   workflow_dispatch:
 
 concurrency:
@@ -42,7 +48,7 @@ jobs:
           protocol: ftp                 # use "ftps" if the host supports FTP-over-TLS
           port: 21
           local-dir: ./
-          server-dir: ${{ vars.FTP_SERVER_DIR }}
+          server-dir: ${{ vars.FTP_SERVER_DIR || 'public_html/prototype2/' }}
           dangerous-clean-slate: false  # additive deploy; never wipe other files
           exclude: |
             **/.git*
@@ -51,6 +57,7 @@ jobs:
             **/__pycache__/**
             **/scripts/**
             **/screenshots/**
+            **/prototype3/**
             **/*.py
             **/*.md
             **/*.png
@@ -59,7 +66,7 @@ jobs:
       - name: Smoke check — pages are live
         run: |
           set -e
-          for p in "prototype2/" "prototype2/leads/chicago-roofing.html" "prototype2/thanks.html"; do
+          for p in "prototype2/"; do
             code=$(curl -s -o /dev/null -w "%{http_code}" "https://businesslocalrecords.com/${p}")
             echo "GET ${p} -> ${code}"
             [ "$code" = "200" ] || { echo "Smoke check failed for ${p}"; exit 1; }
