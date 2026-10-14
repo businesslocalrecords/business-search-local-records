@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Account | Business Local Records</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="chrome.css">
+<style>
+.wrap{width:min(480px,calc(100% - 2rem));margin:0 auto}
+main{padding:2rem 0 3rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.4rem 1.3rem 1.5rem}
+h1{margin:0 0 .4rem;font-size:1.35rem;font-weight:600;letter-spacing:-.03em}
+p{margin:0 0 1rem;color:var(--muted)}
+label{display:block;margin:0 0 .7rem;font-size:13px;font-weight:600;color:var(--ink)}
+input{display:block;width:100%;box-sizing:border-box;margin-top:.3rem;min-height:46px;border:1px solid #b7c0cc;border-radius:8px;padding:0 .75rem;font:inherit;font-weight:500}
+.card button{width:100%;min-height:46px;border:0;border-radius:8px;background:var(--bp);color:#fff;font-weight:600;cursor:pointer}
+.err{color:#8d2a2a;font-size:14px}
+.card a{color:var(--bp)}
+#google[hidden],#signed[hidden],#create[hidden],#enter[hidden]{display:none}
+.gbtn{display:block;text-align:center;text-decoration:none;box-sizing:border-box;margin-bottom:.8rem;min-height:46px;line-height:46px;border:1px solid #cfd6e0;border-radius:8px;color:var(--ink);font-weight:600}
+</style>
+<script src="/uet.js" async></script>
+<script src="/gtag.js" async></script>
+</head>
+<body>
+<header class="top"><div class="top-inner"><a class="brand" href="./">Business Local Records</a><div class="head-actions"><a id="nav-account" href="portal.html" hidden>Account</a><a id="headsub" href="checkout.html">Subscribe</a><a id="signin" href="./#signin">Sign in</a></div></div><nav class="sections" aria-label="Sections"><a href="./" data-path="./" data-section="permits">Ranked Permit Records</a><a href="occupancy.html" data-path="occupancy.html" data-section="occupancy">Occupancy Records</a><a href="signs.html" data-path="signs.html" data-section="signs">Sign Permit Records</a></nav></header>
+<main class="wrap">
+  <div class="card">
+    <section id="signed" hidden>
+      <h1>Account</h1>
+      <p id="who"></p>
+      <p id="status"></p>
+      <p><a id="open-index" href="./">Open the index</a></p>
+    </section>
+    <section id="create" hidden>
+      <h1>Create your account</h1>
+      <p id="lead">Payment is confirmed. Choose the email and password you will use to sign in.</p>
+      <a class="gbtn" id="google" hidden href="#">Continue with Google</a>
+      <form id="create-form">
+        <label>Email<input id="email" type="email" required autocomplete="email"></label>
+        <label>Password<input id="password" type="password" required minlength="8" autocomplete="new-password"></label>
+        <p class="err" id="create-err" hidden></p>
+        <button type="submit">Create account</button>
+      </form>
+    </section>
+    <section id="enter" hidden>
+      <h1>Sign in</h1>
+      <p>Existing customers sign in with the email and password on the account.</p>
+      <form id="login-form">
+        <label>Email<input id="login-email" type="email" required autocomplete="username"></label>
+        <label>Password<input id="login-password" type="password" required minlength="8" autocomplete="current-password"></label>
+        <p class="err" id="login-err" hidden></p>
+        <button type="submit">Sign in</button>
+      </form>
+      <p><a id="need-sub" href="checkout.html">Subscribe</a></p>
+    </section>
+  </div>
+</main>
+<footer class="site-footer"><div class="ft"><a class="brand" href="./">Business Local Records</a><nav aria-label="Footer"><a href="about.html">About</a><a href="coverage.html">Coverage</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav></div><div class="copyline"><p>&copy; 2026 Business Local Records</p></div></footer>
+<script src="chrome.js"></script>
+<script>
+const params = new URLSearchParams(location.search);
+const claim = params.get("claim") || "";
+const city = params.get("city") || "";
+function safePath(value) {
+  if (!value || value.charAt(0) !== "/" || value.indexOf("//") !== -1 || value.indexOf("..") !== -1) return "";
+  return value;
+}
+const next = safePath(params.get("next") || sessionStorage.getItem("blr-return") || "");
+const recordsHref = next || (city ? "./?city=" + encodeURIComponent(city) : "./");
+const thanksHref = "/prototype3/thanks.html?next=" + encodeURIComponent(recordsHref);
+document.getElementById("open-index").href = recordsHref;
+if (city) document.getElementById("need-sub").href = "checkout.html?city=" + encodeURIComponent(city);
+
+function show(id){
+  ["signed", "create", "enter"].forEach((name) => {
+    document.getElementById(name).hidden = name !== id;
+  });
+}
+function fail(id, message){
+  const err = document.getElementById(id);
+  err.hidden = false;
+  err.textContent = message;
+}
+fetch("/api/index.php?r=me", {credentials: "same-origin"}).then((res) => res.json()).then((me) => {
+  if (me && me.email){
+    document.getElementById("who").textContent = me.email;
+    document.getElementById("status").textContent = me.subscribed
+      ? "Subscription active. Every city on the index is open."
+      : "No active subscription on this account.";
+    show("signed");
+    return;
+  }
+  if (claim){
+    let saved = null;
+    try { saved = JSON.parse(sessionStorage.getItem("blr-join") || ""); } catch (err) { saved = null; }
+    if (saved && saved.email && saved.password){
+      fetch("/api/index.php?r=account", {
+        method: "POST",
+        credentials: "same-origin",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({claim: claim, email: saved.email, password: saved.password, next: recordsHref})
+      }).then(async (res) => {
+        const data = await res.json().catch(() => ({}));
+        sessionStorage.removeItem("blr-join");
+        if (res.ok){
+          location.href = thanksHref + (data.mailed === false ? "&mail=0" : "");
+          return;
+        }
+        document.getElementById("email").value = saved.email;
+        show("create");
+        fail("create-err", data.error || "The membership was not opened.");
+      }).catch(() => {
+        sessionStorage.removeItem("blr-join");
+        show("create");
+      });
+      return;
+    }
+    show("create");
+    return;
+  }
+  show("enter");
+}).catch(() => show(claim ? "create" : "enter"));
+
+fetch("/api/index.php?r=config", {credentials: "same-origin"}).then((res) => res.json()).then((data) => {
+  if (data.google && claim){
+    const link = document.getElementById("google");
+    link.hidden = false;
+    link.href = "/api/index.php?r=auth/google&claim=" + encodeURIComponent(claim);
+  }
+}).catch(() => {});
+
+document.getElementById("create-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  document.getElementById("create-err").hidden = true;
+  fetch("/api/index.php?r=account", {
+    method: "POST",
+    credentials: "same-origin",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      claim: claim,
+      email: document.getElementById("email").value.trim(),
+      password: document.getElementById("password").value,
+      next: recordsHref
+    })
+  }).then(async (res) => {
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok){
+      fail("create-err", data.error || "Account was not created.");
+      return;
+    }
+    location.href = thanksHref + (data.mailed === false ? "&mail=0" : "");
+  }).catch(() => fail("create-err", "Account service is unavailable."));
+});
+
+document.getElementById("login-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  document.getElementById("login-err").hidden = true;
+  fetch("/api/index.php?r=login", {
+    method: "POST",
+    credentials: "same-origin",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      email: document.getElementById("login-email").value.trim(),
+      password: document.getElementById("login-password").value
+    })
+  }).then(async (res) => {
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok){
+      fail("login-err", data.error || "Sign in failed.");
+      return;
+    }
+    location.href = recordsHref;
+  }).catch(() => fail("login-err", "Account service is unavailable."));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Welcome to Business Local Records</title>
+<meta name="theme-color" content="#0b2545">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/landing.css">
+<script src="/uet.js" async></script>
+<script src="/gtag.js" async></script>
+<style>
+  .check { width: 64px; height: 64px; border-radius: 50%; background: var(--ok-soft); color: var(--ok); display: grid; place-items: center; font-size: 34px; margin: 0 auto var(--s4); border: 1px solid #bfe3cb; }
+  .next-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--s3); margin-top: var(--s2); }
+  @media (max-width: 820px){ .next-steps{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html"><span class="mark">B</span><span>Business Local Records<small>Local project leads</small></span></a>
+    <nav>
+      <a class="hlink" href="index.html">Open the index</a>
+      <a class="hlink" href="portal.html">Account</a>
+      <a class="btn btn-primary" href="portal.html" data-track="goto_portal" data-label="thanks_header">My account</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap" style="max-width: 780px">
+      <div class="card card-pad" style="text-align:center">
+        <div class="check">✓</div>
+        <span class="eyebrow" style="justify-content:center">Membership active</span>
+        <h1 style="margin-top:var(--s3)">You're in. Every city is now open.</h1>
+        <p style="color:var(--muted);max-width:40rem;margin-inline:auto">Read every issued record, download the full list for any city, and get alerts when a new permit matches. Jump back into where you left off below.</p>
+        <div class="cta-row" style="justify-content:center">
+          <a class="btn btn-primary btn-lg" id="open-next" href="index.html" data-track="open_index" data-label="thanks">Open the full records</a>
+          <a class="btn btn-ghost btn-lg" href="portal.html" data-track="goto_portal" data-label="thanks">Set up an alert</a>
+        </div>
+        <p class="micro" style="margin-top:var(--s3)">Manage or cancel anytime from <a href="portal.html">Billing</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow center">Make the most of it</span><h2>Three steps to booked work</h2></div>
+      <div class="next-steps">
+        <div class="step"><div class="num">1</div><h3>Filter your city &amp; trade</h3><p>Pick your city, then filter by permit type, trade, and size band to surface the jobs worth calling.</p></div>
+        <div class="step"><div class="num">2</div><h3>Download the list</h3><p>Grab the full filtered list as CSV or Excel and load it into your CRM or dialler.</p></div>
+        <div class="step"><div class="num">3</div><h3>Set an alert</h3><p>Get a short email when a new permit matches your city, trade, or size — before the competition calls.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="newsletter">
+    <div class="wrap nl-wrap">
+      <div class="nl-copy">
+        <span class="eyebrow">Free weekly digest</span>
+        <h2>Get each week's new permits in your inbox.</h2>
+        <p>A short weekly email with the newest, biggest permits across the cities and trades you care about — so you never miss the good ones.</p>
+      </div>
+      <form class="nl-form" id="nl-form" novalidate>
+        <input type="email" name="email" required placeholder="you@company.com" aria-label="Work email">
+        <button class="btn btn-primary" type="submit">Send this week's leads</button>
+        <p class="nl-note" id="nl-note" role="status" hidden></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-band">
+        <span class="eyebrow" style="color:var(--accent);justify-content:center">Want it done for you?</span>
+        <h2 style="margin-top:var(--s3)">Let us build &amp; deliver your lead list.</h2>
+        <p>Tailored trades, zones, and value bands — set up once, delivered weekly. Tell us the trade and city and we'll take it from there.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary btn-lg" href="mailto:sales@businesslocalrecords.com?subject=Done-for-you%20leads" data-track="contact_dfy" data-label="thanks">Talk to sales</a>
+          <a class="btn btn-ghost btn-lg" href="index.html" data-track="open_index" data-label="thanks" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.4)">Explore the index</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="ft wrap">
+    <a class="brand" href="index.html"><span class="mark">B</span><span>Business Local Records<small>Local project leads</small></span></a>
+    <nav aria-label="Footer">
+      <a href="about.html">About</a>
+      <a href="coverage.html">Coverage</a>
+      <a href="methodology.html">Methodology</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+  <div class="copyline"><p>&copy; 2026 Business Local Records · 55 Church St, New York, NY 10007 · sales@businesslocalrecords.com</p></div>
+</footer>
+
+<script src="assets/landing.js" defer></script>
+<script>
+  // Return the member to the filtered records they came from (same-origin path only).
+  (function () {
+    try {
+      var p = new URLSearchParams(location.search).get("next") || "";
+      if (p && p.charAt(0) === "/" && p.indexOf("//") === -1 && p.indexOf("..") === -1) {
+        document.getElementById("open-next").setAttribute("href", p);
+      }
+    } catch (e) {}
+  })();
+</script>
+</body>
+</html>

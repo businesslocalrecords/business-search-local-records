@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+# Board app pages are noindex; only the /leads/ landers are crawlable.
+Sitemap: https://businesslocalrecords.com/prototype3/leads/sitemap.xml

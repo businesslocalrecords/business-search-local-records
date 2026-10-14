@@ -1,0 +1,57 @@
+# Auto-deploy PROTOTYPE 3 to Network Solutions on push to main.
+#
+# Prototype 3 is isolated under `prototype3/` and publishes to
+# `public_html/prototype3/` — served at businesslocalrecords.com/prototype3/.
+# It never writes to `/prototype2/` or the site root, so the live Prototype 2
+# stays exactly as-is. Both prototypes coexist.
+#
+# Required GitHub Secrets (reused from Prototype 2): FTP_SERVER, FTP_USERNAME,
+# FTP_PASSWORD.
+# Optional repository Variable: FTP_SERVER_DIR_P3 (default public_html/prototype3/).
+
+name: Deploy Prototype 3
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "prototype3/**"
+      - ".github/workflows/deploy-prototype3.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-prototype3
+  cancel-in-progress: true
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Upload site to /prototype3 via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp                 # use "ftps" if the host supports FTP-over-TLS
+          port: 21
+          local-dir: ./prototype3/
+          server-dir: ${{ vars.FTP_SERVER_DIR_P3 }}
+          dangerous-clean-slate: false  # additive; never wipe other files
+          exclude: |
+            **/__pycache__/**
+            **/*.py
+            **/*.md
+
+      - name: Smoke check — prototype3 is live
+        run: |
+          set -e
+          for p in "prototype3/" "prototype3/leads/chicago-roofing.html" "prototype3/thanks.html"; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "https://businesslocalrecords.com/${p}")
+            echo "GET ${p} -> ${code}"
+            [ "$code" = "200" ] || { echo "Smoke check failed for ${p}"; exit 1; }
+          done
+          echo "Prototype 3 deploy OK."

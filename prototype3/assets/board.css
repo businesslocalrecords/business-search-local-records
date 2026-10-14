@@ -1,0 +1,63 @@
+/* =========================================================================
+   Prototype 3 — board overlay
+   Loaded AFTER the board's inline <style> (and after tokens.css) so these
+   rules win at equal specificity. Keeps the board's behavior; only refreshes
+   the look and adds a conversion hero.
+   ========================================================================= */
+
+/* Unified brand mark in the navy header */
+.top .top-inner { gap: 0.75rem; }
+.top .brand {
+  display: inline-flex; align-items: center; gap: 0.5rem; font-size: 16px;
+  font-weight: 700; letter-spacing: -0.01em; color: #fff;
+}
+.top .brand::before {
+  content: "B"; width: 26px; height: 26px; border-radius: 7px; flex: none;
+  background: linear-gradient(135deg, var(--accent), #ffd166); color: var(--accent-ink);
+  display: grid; place-items: center; font-weight: 800; font-size: 14px;
+}
+.top .brand:hover { text-decoration: none; color: #fff; }
+
+/* Amber sign-in for higher CTR against the navy bar */
+#signin { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+#signin:hover { background: var(--accent-strong); }
+/* Subscribe link pop */
+#headsub { color: #ffd166; font-weight: 700; }
+#headsub:hover { color: #fff; }
+
+/* Active city/tab underline uses the brand navy dot */
+.cities a.on, .sections a.on { border-color: var(--accent); }
+
+/* Slim full-bleed conversion hero above the board */
+.p3-hero { background: linear-gradient(135deg, #0b2545, #071a33); color: #fff; }
+.p3-hero-in {
+  display: flex; flex-wrap: wrap; gap: 1rem 1.75rem; align-items: center;
+  justify-content: space-between; padding: 1.35rem 0;
+}
+.p3-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.5rem; font-size: 12px;
+  font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #ffd166;
+}
+.p3-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(255, 183, 3, 0.2); }
+.p3-hero h2 { color: #fff; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; margin: 0.45rem 0 0.35rem; }
+.p3-hero p { color: rgba(255, 255, 255, 0.8); margin: 0; font-size: 14px; max-width: 54ch; }
+.p3-hero-cta { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.p3-btn-primary {
+  display: inline-flex; align-items: center; min-height: 46px; padding: 0 1.1rem;
+  border-radius: 9px; background: var(--accent); color: var(--accent-ink);
+  font-weight: 700; font-size: 14px; box-shadow: 0 8px 20px rgba(255, 183, 3, 0.25);
+}
+.p3-btn-primary:hover { background: var(--accent-strong); text-decoration: none; }
+.p3-btn-ghost {
+  display: inline-flex; align-items: center; min-height: 46px; padding: 0 1.1rem;
+  border-radius: 9px; border: 1px solid rgba(255, 255, 255, 0.4); color: #fff;
+  font-weight: 600; font-size: 14px;
+}
+.p3-btn-ghost:hover { border-color: #fff; text-decoration: none; }
+@media (max-width: 720px) {
+  .p3-hero-in { flex-direction: column; align-items: flex-start; }
+  .p3-hero h2 { font-size: 1.25rem; }
+}
+
+/* A touch of depth on the board card */
+.board { box-shadow: 0 8px 24px rgba(11, 37, 69, 0.06); }

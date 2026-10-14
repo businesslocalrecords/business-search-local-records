@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sign up | Business Local Records</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="chrome.css">
+<style>
+.wrap{width:min(480px,calc(100% - 2rem));margin:0 auto}
+main{padding:2rem 0 3rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.35rem 1.3rem 1.4rem}
+h1{margin:0 0 .4rem;font-size:1.35rem;font-weight:600;letter-spacing:-.03em}
+.lead{margin:0 0 .85rem;color:var(--ink);font-size:15px}
+ul{margin:0 0 1rem;padding:0;list-style:none}
+li{position:relative;margin:0 0 .35rem;padding-left:1rem;font-size:14px}
+li:before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--bp)}
+.amt{margin:0 0 .15rem;font-size:1.15rem;font-weight:600}
+.member{margin:0 0 .85rem}
+.member label{display:block;margin:0 0 .55rem;font-size:13px;font-weight:600;color:var(--ink)}
+.member input{display:block;width:100%;box-sizing:border-box;margin-top:.3rem;min-height:44px;border:1px solid #b7c0cc;border-radius:8px;padding:0 .75rem;font:inherit;font-weight:500}
+.fine{margin:0 0 .9rem;color:var(--muted);font-size:13px}
+.note{color:#8d2a2a;font-size:14px}
+.member{width:min(280px,100%);margin:0 auto .9rem;text-align:left}
+.pp{width:min(280px,100%);min-height:45px;margin:0 auto}
+.pay-fallback{display:block;width:100%;max-width:340px;min-height:45px;border:0;border-radius:4px;background:#ffc439;color:#111;font-weight:700;font-size:15px;cursor:pointer}
+.pay-fallback[hidden]{display:none}
+.pp>div{margin:0 !important}
+.pp .item-header,.pp .item-description{display:none !important}
+.pp .paypal-buttons-layout{margin-top:0 !important}
+.pp .paypal-card-art{margin-top:.9rem !important}
+.back{display:inline-block;margin-top:1rem;color:var(--bp);font-size:14px;font-weight:500}
+</style>
+<script src="/uet.js" async></script>
+<script src="/gtag.js" async></script>
+</head>
+<body>
+<header class="top"><div class="top-inner"><a class="brand" href="./">Business Local Records</a><div class="head-actions"><a id="nav-account" href="portal.html" hidden>Account</a><a id="headsub" href="checkout.html">Subscribe</a><a id="signin" href="./#signin">Sign in</a></div></div><nav class="sections" aria-label="Sections"><a href="./" data-path="./" data-section="permits">Ranked Permit Records</a><a href="occupancy.html" data-path="occupancy.html" data-section="occupancy">Occupancy Records</a><a href="signs.html" data-path="signs.html" data-section="signs">Sign Permit Records</a></nav></header>
+<main class="wrap">
+  <div class="card">
+    <h1>Sign up</h1>
+    <p class="lead" id="pitch">Membership opens every city on the index.</p>
+    <ul>
+      <li>Read every issued record on the site</li>
+      <li>Download the full list for every city</li>
+      <li>Each new week is included</li>
+    </ul>
+    <p class="amt">$9.99/month</p>
+    <form id="member" class="member">
+      <label>Email<input id="email" type="email" required autocomplete="email"></label>
+      <label>Password<input id="password" type="password" required minlength="8" autocomplete="new-password"></label>
+    </form>
+    <div class="pp" id="paypal-button"></div>
+    <button type="button" class="pay-fallback" id="pay-fallback" hidden>Continue with PayPal</button>
+    <p class="note" id="note" hidden></p>
+    <p class="fine">Cancel anytime.</p>
+    <a class="back" id="back" href="./">Back to the records</a>
+  </div>
+</main>
+<footer class="site-footer"><div class="ft"><a class="brand" href="./">Business Local Records</a><nav aria-label="Footer"><a href="about.html">About</a><a href="coverage.html">Coverage</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav></div><div class="copyline"><p>&copy; 2026 Business Local Records</p></div></footer>
+<script>
+const CITIES = {
+  austin: "Austin",
+  "baton-rouge": "Baton Rouge",
+  chicago: "Chicago",
+  houston: "Houston",
+  "los-angeles": "Los Angeles",
+  philadelphia: "Philadelphia",
+  phoenix: "Phoenix",
+  "san-diego": "San Diego",
+  "san-francisco": "San Francisco",
+  seattle: "Seattle"
+};
+const note = document.getElementById("note");
+const params = new URLSearchParams(location.search);
+const city = (params.get("city") || "").toLowerCase();
+const label = CITIES[city] || "";
+function safePath(value) {
+  if (!value || value.charAt(0) !== "/" || value.indexOf("//") !== -1 || value.indexOf("..") !== -1) return "/";
+  return value;
+}
+const next = safePath(params.get("next") || sessionStorage.getItem("blr-return") || "");
+sessionStorage.setItem("blr-return", next);
+document.getElementById("back").href = next;
+if (label){
+  document.getElementById("pitch").textContent = label + " is included, with every other city.";
+}
+function show(message){
+  note.hidden = false;
+  note.textContent = message;
+}
+const PLAN = "P-4C1822106V210274RNLFI5YQ";
+function memberFields(quiet){
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  if (email.indexOf("@") === -1 || password.length < 8){
+    if (!quiet) show("Use an email and a password of at least 8 characters.");
+    return null;
+  }
+  note.hidden = true;
+  return {email: email, password: password};
+}
+function chosenMember(){
+  const live = memberFields(true);
+  if (live) return live;
+  let saved = null;
+  try { saved = JSON.parse(sessionStorage.getItem("blr-join") || ""); } catch (err) { saved = null; }
+  if (saved && saved.email && saved.email.indexOf("@") !== -1 && saved.password && saved.password.length >= 8) return saved;
+  show("Use an email and a password of at least 8 characters.");
+  return null;
+}
+function openIndex(mailed){
+  location.href = "/prototype3/thanks.html?next=" + encodeURIComponent(next) + (mailed === false ? "&mail=0" : "");
+}
+function createAccount(claim, member){
+  return fetch("/api/index.php?r=account", {
+    method: "POST",
+    credentials: "same-origin",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({claim: claim, email: member.email, password: member.password, next: next})
+  }).then(async (res) => {
+    const body = await res.json().catch(() => ({}));
+    if (!res.ok){
+      show(body.error || "The membership was not opened.");
+      return;
+    }
+    sessionStorage.removeItem("blr-join");
+    openIndex(body.mailed);
+  });
+}
+function afterPay(data, member){
+  return fetch("/api/index.php?r=paypal/approved", {
+    method: "POST",
+    credentials: "same-origin",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(data || {})
+  }).then(async (res) => {
+    const body = await res.json().catch(() => ({}));
+    if (body.claim) return createAccount(body.claim, member);
+    show(body.error || "Payment was not confirmed.");
+  });
+}
+function renderButton(){
+  paypal.Buttons({
+    style: {layout: "vertical", color: "gold", shape: "rect", label: "paypal"},
+    onClick: function () {
+      const member = memberFields();
+      if (!member) return false;
+      sessionStorage.setItem("blr-join", JSON.stringify(member));
+      return true;
+    },
+    createSubscription: function (data, actions) {
+      return actions.subscription.create({plan_id: PLAN});
+    },
+    onApprove: function (data) {
+      const member = chosenMember();
+      if (!member) return;
+      return afterPay({subscriptionID: data.subscriptionID}, member);
+    }
+  }).render("#paypal-button").catch(function () {
+    document.getElementById("pay-fallback").hidden = false;
+  });
+}
+function loadSdk(){
+  return new Promise(function (resolve) {
+    const s = document.createElement("script");
+    s.src = "https://www.paypal.com/sdk/js?client-id=BAAyDpOFUgAWamePQfsgY1eFHOscwT2K6OuHRNgP_vTu_m_gGQpyI5Wmw-1sobHxeYXMqTHw_pG4R5KUPE&vault=true&intent=subscription&currency=USD";
+    s.onload = function () { resolve(!!(window.paypal && paypal.Buttons)); };
+    s.onerror = function () { resolve(false); };
+    document.head.appendChild(s);
+  });
+}
+document.getElementById("member").addEventListener("submit", function (e) { e.preventDefault(); });
+document.getElementById("pay-fallback").addEventListener("click", function () {
+  const member = memberFields();
+  if (!member) return;
+  sessionStorage.setItem("blr-join", JSON.stringify(member));
+  fetch("/api/index.php?r=checkout", {
+    method: "POST",
+    credentials: "same-origin",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({next: next})
+  }).then((res) => res.json()).then((body) => {
+    if (body.approve_url) location.href = body.approve_url;
+    else show("PayPal did not open.");
+  }).catch(() => show("PayPal did not open."));
+});
+if (params.get("cancelled")) show("Signup was cancelled.");
+if (params.get("unconfirmed")) show("Payment was not confirmed.");
+loadSdk().then(function (ok) {
+  if (ok) renderButton();
+  else document.getElementById("pay-fallback").hidden = false;
+});
+fetch("/api/index.php?r=me", {credentials: "same-origin"}).then((res) => res.json()).then((me) => {
+  if (me && me.subscribed){
+    document.getElementById("paypal-button").hidden = true;
+    document.getElementById("member").hidden = true;
+    document.querySelector(".amt").hidden = true;
+    document.querySelector(".fine").hidden = true;
+    document.getElementById("pitch").textContent = "This account is already a member. Every city is open.";
+  }
+}).catch(() => {});
+</script>
+<script src="chrome.js"></script>
+</body>
+</html>

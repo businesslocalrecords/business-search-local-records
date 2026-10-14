@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Account | Business Local Records</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="chrome.css">
+<style>
+body{padding-top:64px}
+.wrap{width:min(880px,calc(100% - 2rem));margin:0 auto}
+main{padding:1.6rem 0 3rem}
+.layout{display:grid;grid-template-columns:180px 1fr;gap:1.25rem;align-items:start}
+@media(max-width:720px){.layout{grid-template-columns:1fr}}
+.side{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.45rem}
+.side button{display:block;width:100%;text-align:left;border:0;background:transparent;border-radius:8px;padding:.55rem .7rem;font-weight:500;cursor:pointer}
+.side button.on{background:#f4f7fb;color:var(--bp);font-weight:600}
+.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.25rem 1.2rem 1.35rem}
+.panel[hidden]{display:none}
+h1{margin:0 0 .25rem;font-size:1.35rem;font-weight:600;letter-spacing:-.03em}
+.lede{margin:0 0 1rem;color:var(--muted);font-size:14px}
+label{display:block;margin:0 0 .7rem;font-size:13px;font-weight:600}
+input,select,textarea{display:block;width:100%;box-sizing:border-box;margin-top:.28rem;border:1px solid #b7c0cc;border-radius:8px;padding:.55rem .75rem;font:inherit;font-weight:500}
+input,select{min-height:42px}
+textarea{min-height:120px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+@media(max-width:720px){.row{grid-template-columns:1fr}}
+button.save,button.danger{min-height:42px;border:0;border-radius:8px;padding:0 1rem;font-weight:600;cursor:pointer}
+button.save{background:var(--bp);color:#fff}
+button.danger{background:#fff;color:#8d2a2a;border:1px solid #e2c8c8}
+.msg{margin:.7rem 0 0;font-size:14px}
+.msg.bad{color:#8d2a2a}
+.msg.ok{color:#1d6b3a}
+.fact{margin:0 0 .45rem;font-size:15px}
+.ask{margin:.75rem 0 0;padding:.75rem;background:#f7f8fa;border-radius:8px}
+.ask[hidden]{display:none}
+.help details{border-top:1px solid var(--line);padding:.7rem 0}
+.help summary{cursor:pointer;font-weight:600}
+.help p{margin:.4rem 0 0;color:var(--muted);font-size:14px}
+#gate h1{margin-bottom:.8rem}
+#app[hidden],#gate[hidden]{display:none}
+</style>
+<script src="/uet.js" async></script>
+<script src="/gtag.js" async></script>
+</head>
+<body>
+<header class="top"><div class="top-inner"><a class="brand" href="./">Business Local Records</a><div class="head-actions"><a id="nav-account" href="portal.html">Account</a><a id="headsub" href="checkout.html">Subscribe</a><a id="signin" href="./#signin">Sign in</a></div></div><nav class="sections" aria-label="Sections"><a href="./" data-path="./" data-section="permits">Ranked Permit Records</a><a href="occupancy.html" data-path="occupancy.html" data-section="occupancy">Occupancy Records</a><a href="signs.html" data-path="signs.html" data-section="signs">Sign Permit Records</a></nav></header>
+<main class="wrap">
+  <section class="panel" id="gate" hidden>
+    <h1>Sign in</h1>
+    <form id="login">
+      <label>Email<input id="login-email" type="email" required autocomplete="username"></label>
+      <label>Password<input id="login-password" type="password" required minlength="8" autocomplete="current-password"></label>
+      <p class="msg bad" id="login-err" hidden></p>
+      <button class="save" type="submit">Sign in</button>
+    </form>
+    <p class="lede" style="margin-top:1rem"><a href="checkout.html">Subscribe</a> to open a membership.</p>
+  </section>
+  <div class="layout" id="app" hidden>
+    <nav class="side" aria-label="Account">
+      <button type="button" class="on" data-tab="profile">Profile</button>
+      <button type="button" data-tab="billing">Billing</button>
+      <button type="button" data-tab="alerts">Alerts</button>
+      <button type="button" data-tab="contact">Contact</button>
+      <button type="button" data-tab="help">Help</button>
+      <button type="button" id="signout">Sign out</button>
+    </nav>
+    <div>
+      <section class="panel" id="profile">
+        <h1>Profile</h1>
+        <p class="lede" id="since"></p>
+        <form id="profile-form">
+          <label>Name<input id="name" maxlength="80" autocomplete="name"></label>
+          <div class="row">
+            <label>Phone<input id="phone" maxlength="40" autocomplete="tel"></label>
+            <label>Company<input id="company" maxlength="80" autocomplete="organization"></label>
+          </div>
+          <label>Home city
+            <select id="home-city">
+              <option value="">No home city</option>
+              <option value="austin">Austin</option>
+              <option value="baton-rouge">Baton Rouge</option>
+              <option value="chicago">Chicago</option>
+              <option value="houston">Houston</option>
+              <option value="los-angeles">Los Angeles</option>
+              <option value="philadelphia">Philadelphia</option>
+              <option value="phoenix">Phoenix</option>
+              <option value="san-diego">San Diego</option>
+              <option value="san-francisco">San Francisco</option>
+              <option value="seattle">Seattle</option>
+            </select>
+          </label>
+          <button class="save" type="submit">Save profile</button>
+          <p class="msg" id="profile-msg" hidden></p>
+        </form>
+        <form id="email-form" style="margin-top:1.4rem">
+          <h2 style="margin:0 0 .7rem;font-size:1rem">Email</h2>
+          <label>New email<input id="new-email" type="email" required autocomplete="email"></label>
+          <label>Current password<input id="email-password" type="password" required minlength="8" autocomplete="current-password"></label>
+          <button class="save" type="submit">Update email</button>
+          <p class="msg" id="email-msg" hidden></p>
+        </form>
+        <form id="password-form" style="margin-top:1.4rem">
+          <h2 style="margin:0 0 .7rem;font-size:1rem">Password</h2>
+          <label>Current password<input id="current-password" type="password" required minlength="8" autocomplete="current-password"></label>
+          <label>New password<input id="new-password" type="password" required minlength="8" autocomplete="new-password"></label>
+          <button class="save" type="submit">Update password</button>
+          <p class="msg" id="password-msg" hidden></p>
+        </form>
+      </section>
+      <section class="panel" id="billing" hidden>
+        <h1>Billing</h1>
+        <p class="fact" id="bill-price"></p>
+        <p class="fact" id="bill-status"></p>
+        <p class="fact" id="bill-payer"></p>
+        <p class="lede">Membership is $9.99/month. Cancel anytime. Access stays open until PayPal closes the subscription.</p>
+        <p id="bill-locked" hidden><a href="checkout.html">Subscribe</a> to start a membership.</p>
+        <button class="danger" type="button" id="cancel" hidden>Cancel membership</button>
+        <div class="ask" id="cancel-ask" hidden>
+          <p class="lede">Confirm to end the $9.99/month membership.</p>
+          <button class="danger" type="button" id="cancel-yes">Confirm cancel</button>
+        </div>
+        <p class="msg" id="bill-msg" hidden></p>
+      </section>
+      <section class="panel" id="alerts" hidden>
+        <h1>Alerts</h1>
+        <p class="lede" id="alert-lead">A short sample is emailed when a new record matches.</p>
+        <form id="alert-form">
+          <div class="row">
+            <label>City
+              <select id="alert-city">
+                <option value="">Any city</option>
+                <option value="austin">Austin</option>
+                <option value="baton-rouge">Baton Rouge</option>
+                <option value="chicago">Chicago</option>
+                <option value="houston">Houston</option>
+                <option value="los-angeles">Los Angeles</option>
+                <option value="philadelphia">Philadelphia</option>
+                <option value="phoenix">Phoenix</option>
+                <option value="san-diego">San Diego</option>
+                <option value="san-francisco">San Francisco</option>
+                <option value="seattle">Seattle</option>
+              </select>
+            </label>
+            <label>Section
+              <select id="alert-section">
+                <option value="permits">Ranked Permit Records</option>
+                <option value="occupancy">Occupancy Records</option>
+                <option value="signs">Sign Permit Records</option>
+              </select>
+            </label>
+          </div>
+          <label>Permit type<input id="alert-type" maxlength="160"></label>
+          <div class="row">
+            <label>Trade
+              <select id="alert-trade">
+                <option value="">Any trade</option>
+                <option>Electrical</option><option>Roofing</option><option>Plumbing</option><option>Garage</option><option>Solar</option><option>Tuckpointing</option><option>Porch</option><option>Kitchen</option><option>Bath</option><option>Fence</option>
+              </select>
+            </label>
+            <label>Size
+              <select id="alert-size">
+                <option value="">Any size</option>
+                <option value="5">$500k+</option>
+                <option value="4">$100k–$500k</option>
+                <option value="3">$50k–$100k</option>
+                <option value="2">$10k–$50k</option>
+                <option value="1">Under $10k</option>
+                <option value="0">Not published</option>
+              </select>
+            </label>
+          </div>
+          <label>Frequency
+            <select id="alert-frequency">
+              <option value="twice">Twice a day</option>
+              <option value="daily">Once a day</option>
+              <option value="weekly">Once a week</option>
+              <option value="monthly">Once a month</option>
+            </select>
+          </label>
+          <button class="save" type="submit">Save alert</button>
+          <button class="danger" type="button" id="alert-off">Turn off</button>
+          <p class="msg" id="alert-msg" hidden></p>
+        </form>
+      </section>
+      <section class="panel" id="contact" hidden>
+        <h1>Contact</h1>
+        <p class="lede">Send a note to the office. You can also write directly to sales@businesslocalrecords.com. Business Local Records, 55 Church St, New York, NY 10007.</p>
+        <form id="contact-form">
+          <label>Topic
+            <select id="topic" required>
+              <option value="">Choose a topic</option>
+              <option>Billing</option>
+              <option>Alerts</option>
+              <option>Records</option>
+              <option>Account</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>Message<textarea id="message" required minlength="10" maxlength="2000"></textarea></label>
+          <button class="save" type="submit">Send</button>
+          <p class="msg" id="contact-msg" hidden></p>
+        </form>
+      </section>
+      <section class="panel help" id="help" hidden>
+        <h1>Help</h1>
+        <details open><summary>What does the membership include?</summary><p>$9.99/month opens every city, the full records past the free preview, and downloads. Each new week is included while the membership is active. Cancel anytime from Billing.</p></details>
+        <details><summary>How do alerts work?</summary><p>A paid member saves one alert for a city, section, permit type, trade, or size. The local job checks twice a day and emails a short sample when something new matches. The sample links back to the filtered list.</p></details>
+        <details><summary>How do I download records?</summary><p>Open a city on the index and use Download. Members can take the filtered list as a spreadsheet. Guests see the sign-in offer.</p></details>
+        <details><summary>I paid and cannot sign in.</summary><p>Use the email and password chosen on the subscribe page. If that email already had an account, sign in with the existing password. For a payment that did not attach, write to sales@businesslocalrecords.com.</p></details>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="site-footer"><div class="ft"><a class="brand" href="./">Business Local Records</a><nav aria-label="Footer"><a href="about.html">About</a><a href="coverage.html">Coverage</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></nav></div><div class="copyline"><p>&copy; 2026 Business Local Records</p></div></footer>
+<script src="chrome.js"></script>
+<script>
+const city = new URLSearchParams(location.search).get("city") || "";
+const indexHref = city ? "./?city=" + encodeURIComponent(city) : "./";
+function say(id, text, ok){
+  const el = document.getElementById(id);
+  el.hidden = false;
+  el.textContent = text;
+  el.className = "msg " + (ok ? "ok" : "bad");
+}
+async function send(path, body){
+  const res = await fetch("/api/index.php?r=" + path, {
+    method: "POST",
+    credentials: "same-origin",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(body || {})
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || "That did not save.");
+  return data;
+}
+function showTab(name){
+  document.querySelectorAll(".side [data-tab]").forEach((btn) => {
+    btn.classList.toggle("on", btn.dataset.tab === name);
+  });
+  ["profile", "billing", "alerts", "contact", "help"].forEach((id) => {
+    document.getElementById(id).hidden = id !== name;
+  });
+}
+document.querySelectorAll(".side [data-tab]").forEach((btn) => {
+  btn.addEventListener("click", () => showTab(btn.dataset.tab));
+});
+function fill(data){
+  const profile = data.profile || {};
+  document.getElementById("name").value = profile.name || "";
+  document.getElementById("phone").value = profile.phone || "";
+  document.getElementById("company").value = profile.company || "";
+  document.getElementById("home-city").value = profile.home_city || "";
+  document.getElementById("new-email").value = profile.email || data.email || "";
+  const since = profile.member_since ? profile.member_since.slice(0, 10) : "";
+  document.getElementById("since").textContent = since ? "Member since " + since + "." : "";
+  const bill = data.billing || {};
+  const labels = {ACTIVE: "Active", APPROVED: "Active", COMPLETED: "Active", Completed: "Active", CANCELLED: "Cancelled", none: "No membership"};
+  document.getElementById("bill-price").textContent = bill.active ? "$9.99/month" : "No active membership";
+  document.getElementById("bill-status").textContent = "Status: " + (labels[bill.status] || bill.status || "Unknown");
+  document.getElementById("bill-payer").textContent = bill.payer ? "PayPal email: " + bill.payer : "";
+  document.getElementById("cancel").hidden = !bill.can_cancel;
+  document.getElementById("bill-locked").hidden = !!data.subscribed;
+  const alert = data.alert;
+  document.getElementById("alert-lead").textContent = data.subscribed
+    ? "A short sample is emailed when a new record matches."
+    : "Alerts are saved for paid members.";
+  document.getElementById("alert-form").querySelectorAll("input,select,button").forEach((el) => {
+    el.disabled = !data.subscribed;
+  });
+  if (alert){
+    document.getElementById("alert-city").value = alert.city || "";
+    document.getElementById("alert-section").value = alert.section || "permits";
+    document.getElementById("alert-type").value = alert.permit_type || "";
+    document.getElementById("alert-trade").value = alert.trade || "";
+    document.getElementById("alert-size").value = alert.size || "";
+    document.getElementById("alert-frequency").value = alert.frequency || "daily";
+  }
+  if (profile.home_city){
+    const open = document.createElement("p");
+    open.className = "lede";
+    const link = document.createElement("a");
+    link.href = "./?city=" + encodeURIComponent(profile.home_city);
+    link.textContent = "Open the home city";
+    open.appendChild(link);
+    document.getElementById("since").after(open);
+  }
+}
+document.getElementById("profile-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  send("portal/profile", {
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    company: document.getElementById("company").value,
+    home_city: document.getElementById("home-city").value
+  }).then(() => say("profile-msg", "Profile saved.", true)).catch((err) => say("profile-msg", err.message, false));
+});
+document.getElementById("email-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  send("portal/email", {
+    email: document.getElementById("new-email").value,
+    password: document.getElementById("email-password").value
+  }).then(() => {
+    document.getElementById("email-password").value = "";
+    say("email-msg", "Email updated.", true);
+  }).catch((err) => say("email-msg", err.message, false));
+});
+document.getElementById("password-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  send("portal/password", {
+    current: document.getElementById("current-password").value,
+    password: document.getElementById("new-password").value
+  }).then(() => {
+    document.getElementById("current-password").value = "";
+    document.getElementById("new-password").value = "";
+    say("password-msg", "Password updated.", true);
+  }).catch((err) => say("password-msg", err.message, false));
+});
+document.getElementById("cancel").addEventListener("click", () => {
+  document.getElementById("cancel-ask").hidden = false;
+});
+document.getElementById("cancel-yes").addEventListener("click", () => {
+  send("portal/cancel", {}).then((data) => {
+    document.getElementById("cancel").hidden = true;
+    document.getElementById("cancel-ask").hidden = true;
+    document.getElementById("bill-price").textContent = "No active membership";
+    document.getElementById("bill-status").textContent = "Status: Cancelled";
+    document.getElementById("bill-locked").hidden = false;
+    if (data && data.subscribed === false) document.getElementById("headsub").hidden = false;
+    say("bill-msg", "Membership cancelled.", true);
+  }).catch((err) => say("bill-msg", err.message, false));
+});
+function alertBody(enabled){
+  return {
+    city: document.getElementById("alert-city").value,
+    section: document.getElementById("alert-section").value,
+    permit_type: document.getElementById("alert-type").value,
+    trade: document.getElementById("alert-trade").value,
+    size: document.getElementById("alert-size").value,
+    frequency: document.getElementById("alert-frequency").value,
+    enabled: enabled
+  };
+}
+document.getElementById("alert-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  send("alerts", alertBody(true)).then(() => say("alert-msg", "Alert saved.", true)).catch((err) => say("alert-msg", err.message, false));
+});
+document.getElementById("alert-off").addEventListener("click", () => {
+  send("alerts", alertBody(false)).then(() => say("alert-msg", "Alert turned off.", true)).catch((err) => say("alert-msg", err.message, false));
+});
+document.getElementById("contact-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  send("portal/contact", {
+    topic: document.getElementById("topic").value,
+    body: document.getElementById("message").value
+  }).then(() => {
+    document.getElementById("message").value = "";
+    say("contact-msg", "Message received.", true);
+  }).catch((err) => say("contact-msg", err.message, false));
+});
+document.getElementById("signout").addEventListener("click", () => {
+  fetch("/api/index.php?r=logout", {method: "POST", credentials: "same-origin"}).finally(() => {
+    location.href = indexHref;
+  });
+});
+document.getElementById("login").addEventListener("submit", (e) => {
+  e.preventDefault();
+  document.getElementById("login-err").hidden = true;
+  send("login", {
+    email: document.getElementById("login-email").value,
+    password: document.getElementById("login-password").value
+  }).then(() => location.reload()).catch((err) => say("login-err", err.message, false));
+});
+fetch("/api/index.php?r=portal", {credentials: "same-origin"}).then((res) => res.json()).then((data) => {
+  if (!data || !data.email){
+    document.getElementById("gate").hidden = false;
+    return;
+  }
+  document.getElementById("app").hidden = false;
+  fill(data);
+}).catch(() => {
+  document.getElementById("gate").hidden = false;
+});
+</script>
+</body>
+</html>
